@@ -214,4 +214,65 @@ footer{margin:38px 0 54px; padding-top:18px; border-top:1px solid var(--border);
 footer .src{font-family:var(--mono); font-size:11px; color:var(--text-3)}
 footer .src b{color:var(--text-2)}
 
+/* ================= DETAIL PAGES (athlete / event) ================= */
+.crumb{display:flex; align-items:center; gap:9px; font-size:13px; margin:2px 0 18px}
+.crumb a{color:var(--text-2); text-decoration:none; font-weight:600; transition:color .15s}
+.crumb a:hover{color:var(--accent)}
+.crumb .sep{color:var(--border-2)}
+.crumb .here{color:var(--text-3); font-weight:600}
+
+/* clickable athlete cell */
+a.athlink{text-decoration:none; color:inherit; display:block}
+a.athlink:hover .ath{color:var(--accent)}
+.evgo{color:var(--accent)!important; text-decoration:none; font-weight:600}
+.evgo:hover{text-decoration:underline}
+a.evlink{color:inherit; text-decoration:none; transition:color .15s}
+a.evlink:hover{color:var(--accent)}
+
+/* athlete profile header */
+.profile{display:flex; align-items:center; gap:22px; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:24px 26px; box-shadow:var(--shadow-sm); flex-wrap:wrap}
+.profile .pic{width:92px; height:92px; border-radius:18px; object-fit:cover; background:var(--panel-2); border:1px solid var(--border-2); flex:none}
+.profile .pic.ph{display:grid; place-items:center; font-family:var(--mono); font-size:28px; font-weight:800; color:var(--text-3)}
+.profile .id{min-width:0}
+.profile .id .rk{font-family:var(--mono); font-size:10.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--accent); font-weight:700}
+.profile .id h1{margin:7px 0 11px; font-size:clamp(1.5rem,3vw,2.05rem); font-weight:800; letter-spacing:-.025em; line-height:1}
+.profile .id .facts{display:flex; gap:8px; flex-wrap:wrap}
+.profile .id .facts span{font-size:12.5px; color:var(--text-2); background:var(--panel-2); border:1px solid var(--border); border-radius:999px; padding:5px 13px; font-weight:600}
+.profile .id .facts span .mono{color:var(--text-3); margin-right:6px}
+.profile .stats{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
+.profile .stat{background:var(--panel-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:12px 18px; min-width:78px; text-align:center}
+.profile .stat .n{font-family:var(--mono); font-size:24px; font-weight:800; letter-spacing:-.02em; line-height:1}
+.profile .stat .l{font-family:var(--mono); font-size:9.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--text-3); margin-top:6px; font-weight:600}
+@media (max-width:720px){ .profile .stats{margin-left:0; width:100%} .profile .stat{flex:1} }
+
+/* event header */
+.ehead{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:22px 26px; box-shadow:var(--shadow-sm)}
+.ehead .ecode{font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.06em; color:var(--accent)}
+.ehead h1{margin:8px 0 0; font-size:clamp(1.5rem,3vw,2.05rem); font-weight:800; letter-spacing:-.025em; line-height:1.05}
+.ehead .emeta{font-size:12.5px; color:var(--text-2); margin-top:12px}
+
+/* event workout block */
+.workout{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:22px 26px; box-shadow:var(--shadow-sm); margin-top:18px; max-width:560px}
+.workout .lines{font-size:14.5px; color:var(--text-2); line-height:1.65}
+.workout .lines .load{font-family:var(--mono); color:var(--text); font-weight:600; font-size:13px}
+.workout .lines .step{color:var(--text-3)}
+
+/* two-up result grid */
+.dgrid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; align-items:start}
+@media (max-width:900px){ .dgrid{grid-template-columns:1fr} }
+
+/* results / event tables (shared by athlete + event pages) */
+table.rt{border-collapse:collapse; width:100%; font-size:13.5px}
+table.rt thead th{position:sticky; top:0; background:var(--panel-2); z-index:1; font-family:var(--mono); font-size:10px; letter-spacing:.09em; text-transform:uppercase; color:var(--text-3); font-weight:600; text-align:right; padding:11px 14px; border-bottom:1px solid var(--border-2); white-space:nowrap}
+table.rt thead th.l{text-align:left}
+table.rt tbody td{padding:0 14px; height:54px; border-bottom:1px solid var(--border); text-align:right; vertical-align:middle; white-space:nowrap}
+table.rt tbody td.l{text-align:left}
+table.rt tbody tr:last-child td{border-bottom:0}
+table.rt tbody tr{transition:background .12s}
+table.rt tbody tr:hover{background:var(--hover)}
+table.rt .evcode{font-family:var(--mono); font-size:11px; font-weight:700; color:var(--accent)}
+table.rt .res{color:var(--text)}
+table.rt .seedn{color:var(--text-3); font-weight:600}
+table.rt .plc{display:inline-flex; align-items:center; justify-content:center; min-width:24px; height:24px; padding:0 5px; border-radius:7px; font-size:12.5px}
+
 @media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important; scroll-behavior:auto!important} }

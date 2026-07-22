@@ -1,10 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { AthleteRow, Division, Snapshot } from "@/lib/crossfit/types";
 import {
   Avatar,
+  athleteHref,
   deriveChrome,
+  eventHref,
   fmtClock,
   placeClass,
   placeIn,
@@ -14,7 +17,7 @@ import {
 
 // Leaderboard page body: the competition KPI strip plus the division /
 // event / search toolbar and the standings table.
-export default function LeaderboardView({ snapshot }: { snapshot: Snapshot }) {
+export default function LeaderboardView({ snapshot, year }: { snapshot: Snapshot; year: number }) {
   const { meta, leaderboards, schedule } = snapshot;
   const scored = meta.scored;
   const { mode, hasSchedule } = deriveChrome(snapshot);
@@ -155,7 +158,11 @@ export default function LeaderboardView({ snapshot }: { snapshot: Snapshot }) {
         <div className="card">
           <div className="card-h">
             <h3>{activeCol ? `${activeCol.code} · ${activeCol.name}` : scored ? "Overall Standings" : "Start List"}</h3>
-            <span className="meta">{division === "men" ? "Men" : "Women"} · {lb.totalCompetitors} athletes</span>
+            {activeCol ? (
+              <Link className="meta evgo" href={eventHref(activeCol.code, year)}>View event →</Link>
+            ) : (
+              <span className="meta">{division === "men" ? "Men" : "Women"} · {lb.totalCompetitors} athletes</span>
+            )}
           </div>
           <div className="tscroll">
             <table className="lb" style={{ minWidth: tableMinWidth }}>
@@ -181,13 +188,15 @@ export default function LeaderboardView({ snapshot }: { snapshot: Snapshot }) {
                       <div className="rank"><span className="n">{pos}</span></div>
                     </td>
                     <td className="l">
-                      <div className="athlete">
-                        <Avatar row={r} />
-                        <div>
-                          <div className="ath">{r.name}<span className="cc">{r.countryCode}</span></div>
-                          <div className="aff">{r.affiliate || "—"}</div>
+                      <Link className="athlink" href={athleteHref(division, r, year)}>
+                        <div className="athlete">
+                          <Avatar row={r} />
+                          <div>
+                            <div className="ath">{r.name}<span className="cc">{r.countryCode}</span></div>
+                            <div className="aff">{r.affiliate || "—"}</div>
+                          </div>
                         </div>
-                      </div>
+                      </Link>
                     </td>
                     {columns.map((c) => {
                       const s = r.scores.find((x) => x.ordinal === c.ordinal);

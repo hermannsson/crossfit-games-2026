@@ -2,7 +2,8 @@
 // Schedule, and Workouts pages. Split out of the former single-page Dashboard
 // so each route can render the same chrome and formatting.
 
-import type { AthleteRow, ScheduleEntry, Snapshot } from "@/lib/crossfit/types";
+import type { AthleteRow, Division, ScheduleEntry, Snapshot } from "@/lib/crossfit/types";
+import { COMPETITION_YEARS } from "@/lib/crossfit/competitions";
 
 export type Mode = "seeding" | "live" | "final";
 
@@ -128,4 +129,35 @@ export function fmtRange(a: string | null, b: string | null): string {
 
 export function venueShort(v: string): string {
   return v.split("|")[0].trim();
+}
+
+/* ---------- slugs & internal links ---------- */
+
+// URL-safe slug from an athlete name. Diacritics are folded so e.g.
+// "Þórður Bjarnason" and "Gabriela Migała" produce clean ASCII slugs.
+export function slugify(s: string): string {
+  return s
+    .normalize("NFKD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function athleteSlug(row: AthleteRow): string {
+  return slugify(row.name);
+}
+
+// Match the SiteHeader convention: ?year is appended only for non-default
+// seasons so the default season keeps clean URLs.
+export function withYear(path: string, year: number): string {
+  return year === COMPETITION_YEARS[0] ? path : `${path}?year=${year}`;
+}
+
+export function athleteHref(division: Division, row: AthleteRow, year: number): string {
+  return withYear(`/athlete/${division}/${athleteSlug(row)}`, year);
+}
+
+export function eventHref(code: string, year: number): string {
+  return withYear(`/event/${code.toLowerCase()}`, year);
 }

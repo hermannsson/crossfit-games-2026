@@ -1,9 +1,10 @@
+import Link from "next/link";
 import type { ScheduleEntry, Snapshot } from "@/lib/crossfit/types";
-import { groupByDay, fmtRange, venueShort } from "./shared";
+import { groupByDay, fmtRange, eventHref, venueShort } from "./shared";
 
 // Schedule page body: the competition schedule grouped by day, with
 // expandable heat draws per event.
-export default function ScheduleView({ snapshot }: { snapshot: Snapshot }) {
+export default function ScheduleView({ snapshot, year }: { snapshot: Snapshot; year: number }) {
   const { schedule, leaderboards } = snapshot;
   const eventCount = leaderboards.men.columns.length;
   const days = groupByDay(schedule);
@@ -21,7 +22,7 @@ export default function ScheduleView({ snapshot }: { snapshot: Snapshot }) {
               <tr className="dayhdr" key={`${d.key}-hdr`}>
                 <td colSpan={4}>{d.label} — {venueShort(d.venue)}</td>
               </tr>,
-              ...d.entries.map((e) => <EventRow key={e.order} e={e} />),
+              ...d.entries.map((e) => <EventRow key={e.order} e={e} year={year} />),
             ])}
           </tbody>
         </table>
@@ -30,14 +31,18 @@ export default function ScheduleView({ snapshot }: { snapshot: Snapshot }) {
   );
 }
 
-function EventRow({ e }: { e: ScheduleEntry }) {
+function EventRow({ e, year }: { e: ScheduleEntry; year: number }) {
   const athletes = e.heats.reduce((n, h) => n + h.lanes.length, 0);
+  const code = e.codes[0];
   return (
     <tr>
       <td className="tm">{fmtRange(e.startTime, e.endTime)}</td>
       <td className="code">{e.codeLabel}</td>
       <td>
-        <div className="nm">{e.name}{e.kicker && <span className="kick">{e.kicker}</span>}</div>
+        <div className="nm">
+          {code ? <Link className="evlink" href={eventHref(code, year)}>{e.name}</Link> : e.name}
+          {e.kicker && <span className="kick">{e.kicker}</span>}
+        </div>
         {e.heats.length > 0 && (
           <details className="heats">
             <summary>{e.heats.length} heat{e.heats.length === 1 ? "" : "s"} · {athletes} athletes</summary>

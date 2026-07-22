@@ -25,7 +25,7 @@ export default async function SchedulePage({
     <>
       <SiteHeader meta={snapshot.meta} chrome={chrome} years={COMPETITION_YEARS} activeYear={year} />
       <main className="wrap">
-        <ScheduleView snapshot={snapshot} />
+        <ScheduleView snapshot={snapshot} year={year} />
       </main>
     </>
   );

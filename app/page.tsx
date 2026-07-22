@@ -21,7 +21,7 @@ export default async function Page({
     <>
       <SiteHeader meta={snapshot.meta} chrome={deriveChrome(snapshot)} years={COMPETITION_YEARS} activeYear={year} />
       <main className="wrap">
-        <LeaderboardView snapshot={snapshot} />
+        <LeaderboardView snapshot={snapshot} year={year} />
       </main>
     </>
   );

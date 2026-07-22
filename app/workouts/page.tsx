@@ -25,7 +25,7 @@ export default async function WorkoutsPage({
     <>
       <SiteHeader meta={snapshot.meta} chrome={chrome} years={COMPETITION_YEARS} activeYear={year} />
       <main className="wrap">
-        <WorkoutsView snapshot={snapshot} />
+        <WorkoutsView snapshot={snapshot} year={year} />
       </main>
     </>
   );
