@@ -150,19 +150,11 @@ export default function LeaderboardView({ snapshot, year }: { snapshot: Snapshot
             <div className="s">{runnerUp ? `${runnerUp.countryCode} · ${runnerUp.affiliate || "—"}` : ""}</div>
           </div>
         )}
-        {mode === "final" ? (
-          <div className="kpi">
-            <div className="k">Field</div>
-            <div className="v">{lb.totalCompetitors} <span className="sm">athletes</span></div>
-            <div className="s">final standings</div>
-          </div>
-        ) : (
-          <div className="kpi">
-            <div className="k">Field Cut</div>
-            <div className="v">{lb.totalCompetitors} <span className="sm">→ 20</span></div>
-            <div className="s">later in competition</div>
-          </div>
-        )}
+        <div className="kpi">
+          <div className="k">Field</div>
+          <div className="v">{lb.totalCompetitors} <span className="sm">athletes</span></div>
+          <div className="s">{mode === "final" ? "final standings" : mode === "live" ? "in competition" : "start list"}</div>
+        </div>
       </div>
 
       {/* ===== TOOLBAR ===== */}
