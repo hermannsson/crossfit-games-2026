@@ -1,0 +1,104 @@
+[
+  {
+    "code": "IE1",
+    "eventId": "15034",
+    "name": "The 2007 Hopper",
+    "dayLabel": "July 22",
+    "dayKey": "wednesdayjuly22",
+    "description": [
+      "1,000-meter row",
+      "Then,",
+      "5 rounds:",
+      "25 pull-ups",
+      "7 push jerks"
+    ]
+  },
+  {
+    "code": "IE2",
+    "eventId": "15035",
+    "name": "Ranch 7200",
+    "dayLabel": "July 22",
+    "dayKey": "wednesdayjuly22",
+    "description": [
+      "7,200-meter trail run"
+    ]
+  },
+  {
+    "code": "IE3",
+    "eventId": "15036",
+    "name": "The CrossFit Total",
+    "dayLabel": "July 22",
+    "dayKey": "wednesdayjuly22",
+    "description": [
+      "1-rep max back squat",
+      "1-rep-max shoulder press",
+      "1-rep-max deadlift"
+    ]
+  },
+  {
+    "code": "IE4",
+    "eventId": "15052",
+    "name": "Grass Oval Bicycle Race",
+    "dayLabel": "July 22",
+    "dayKey": "wednesdayjuly22",
+    "description": [
+      "For time:",
+      "20 laps on the track"
+    ]
+  },
+  {
+    "code": "IE5",
+    "eventId": "15037",
+    "name": "500 Run",
+    "dayLabel": "July 25",
+    "dayKey": "saturdayjuly25",
+    "description": [
+      "500-meter sprint"
+    ]
+  },
+  {
+    "code": "IE6",
+    "eventId": "15038",
+    "name": "Speed Snatch Triple",
+    "dayLabel": "July 25",
+    "dayKey": "saturdayjuly25",
+    "description": [
+      "For time:",
+      "3 snatches (1-minute cap)",
+      "♀145 – 150 – 155 lb",
+      "♂ 225 – 235 – 245 lb",
+      "Then,",
+      "3 snatches (2-minute cap)",
+      "♀ 160 – 165 – 170 lb",
+      "♂ 245 – 255 – 265 lb",
+      "Then,",
+      "3 snatches (3-minute cap)",
+      "♀ 175 – 180 – 185 lb",
+      "♂ 265 – 275 – 285 lb"
+    ]
+  },
+  {
+    "code": "IE7",
+    "eventId": "15054",
+    "name": "Machine 7200M",
+    "dayLabel": "July 26",
+    "dayKey": "sundayjuly26",
+    "description": [
+      "For time:",
+      "Row 3,600 meters",
+      "Ski 3,600 meters"
+    ]
+  },
+  {
+    "code": "IE8",
+    "eventId": "15055",
+    "name": "Roll to Support AMRAP",
+    "dayLabel": "July 26",
+    "dayKey": "sundayjuly26",
+    "description": [
+      "As many reps as possible in 5 minutes of:",
+      "4 forward rolls to support",
+      "3 backward rolls to support"
+    ]
+  }
+]

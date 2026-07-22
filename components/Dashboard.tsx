@@ -1,0 +1,429 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import type {
+  AthleteRow,
+  Division,
+  ScheduleEntry,
+  Snapshot,
+  WorkoutBlock,
+} from "@/lib/crossfit/types";
+
+const HERO_IMG =
+  "https://assets.crossfit.com/build/img/sites/games/workouts/hero/games.jpg";
+
+export default function Dashboard({ snapshot }: { snapshot: Snapshot }) {
+  const { meta, leaderboards, schedule, workouts } = snapshot;
+  const scored = meta.scored;
+
+  const [division, setDivision] = useState<Division>("men");
+  const [view, setView] = useState<string>("Overall");
+  const [query, setQuery] = useState("");
+
+  const lb = leaderboards[division];
+  const columns = lb.columns;
+
+  // how many events have been scored (0 while seeding)
+  const completed = useMemo(() => {
+    if (!scored) return 0;
+    let max = 0;
+    for (const r of lb.rows)
+      for (const s of r.scores)
+        if (s.place != null && s.ordinal > max) max = s.ordinal;
+    return max;
+  }, [lb.rows, scored]);
+
+  const rows = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    // scored: order by overall rank. seeding: keep the roster order from the API.
+    const base = scored
+      ? [...lb.rows].sort((a, b) => (a.rank || 1e9) - (b.rank || 1e9))
+      : [...lb.rows];
+    return q ? base.filter((r) => r.name.toLowerCase().includes(q)) : base;
+  }, [lb.rows, query, scored]);
+
+  const maxPoints = useMemo(
+    () => Math.max(1, ...lb.rows.map((r) => r.totalPoints ?? 0)),
+    [lb.rows],
+  );
+
+  const days = useMemo(() => groupByDay(schedule), [schedule]);
+  const [dayKey, setDayKey] = useState<string>(days[0]?.key ?? "");
+  const activeDay = days.find((d) => d.key === dayKey) ?? days[0];
+
+  const nextEvent = schedule[completed] ?? schedule[schedule.length - 1];
+  const leader = rows[0];
+  const fieldTotal = leaderboards.men.totalCompetitors + leaderboards.women.totalCompetitors;
+  const dayKeys = schedule.map((e) => e.dayKey).filter(Boolean).sort();
+  const dateRange = fmtDateRange(dayKeys[0], dayKeys[dayKeys.length - 1]);
+
+  return (
+    <>
+      {/* ===== TOP BAR ===== */}
+      <header className="top">
+        <div className="wrap topbar">
+          <div className="logo">
+            <span className="mk">CF</span>CrossFit Games <span className="yr">2026</span>
+          </div>
+          {!scored && <span className="seedtag">Seeding</span>}
+          <nav className="tabs">
+            <a href="#leaderboard" className="on">Leaderboard</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#workouts">Workouts</a>
+          </nav>
+          <div className="top-spacer" />
+          {scored ? (
+            <span className="livepill"><span className="d" />Live</span>
+          ) : null}
+          <span className="clock mono">Jul 22–26 · San Jose</span>
+        </div>
+      </header>
+
+      <main className="wrap">
+        {/* ===== HERO ===== */}
+        <section className="hero">
+          <div className="bg" style={{ backgroundImage: `url(${HERO_IMG})` }} />
+          <div className="scrim" />
+          <div className="hero-inner">
+            <span className="kick"><span className="dot" />Fittest on Earth · Individual</span>
+            <h1>2026 CrossFit Games</h1>
+            <div className="facts">
+              <span className="fact"><span className="mono">{dateRange}</span></span>
+              <span className="fact">The Ranch → SAP Center · <span className="mono">San Jose, CA</span></span>
+              <span className="fact"><span className="mono">{fieldTotal}</span> athletes</span>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== TOOLBAR ===== */}
+        <div className="toolbar" id="leaderboard">
+          <div className="seg" role="group" aria-label="Division">
+            <button aria-pressed={division === "men"} onClick={() => setDivision("men")}>Men</button>
+            <button aria-pressed={division === "women"} onClick={() => setDivision("women")}>Women</button>
+          </div>
+          <div className="pills" role="group" aria-label="Event view">
+            <span className="lbl">View</span>
+            <button className="pill" aria-pressed={view === "Overall"} onClick={() => setView("Overall")}>Overall</button>
+            {columns.map((c) => (
+              <button key={c.code} className="pill" aria-pressed={view === c.code}
+                onClick={() => setView(c.code)} title={c.name}>{c.code}</button>
+            ))}
+          </div>
+          <label className="search">
+            <span className="mono" aria-hidden>⌕</span>
+            <input placeholder="Search athlete…" aria-label="Search athlete"
+              value={query} onChange={(e) => setQuery(e.target.value)} />
+          </label>
+        </div>
+
+        {/* ===== KPI STRIP ===== */}
+        <div className="kpis">
+          <div className="kpi">
+            <div className="k">{scored ? "Current Leader" : "Top Seed"}</div>
+            <div className="v">
+              {leader ? shortName(leader) : "—"}
+              {scored && leader?.totalPoints != null && <span className="sm">{leader.totalPoints}</span>}
+            </div>
+            <div className="s">{leader ? `${leader.countryCode} · ${leader.affiliate || "—"}` : ""}</div>
+          </div>
+          <div className="kpi">
+            <div className="k">Events</div>
+            <div className="v">{completed} <span className="sm">/ {columns.length}</span></div>
+            <div className="s">{scored ? "scored" : "not yet scored"}</div>
+          </div>
+          <div className="kpi">
+            <div className="k">Next Event</div>
+            <div className="v sm2">{nextEvent?.name ?? "TBA"}</div>
+            <div className="s mono">{nextEvent ? `${nextEvent.dayLabel} · ${fmtClock(nextEvent.startTime)} · ${venueShort(nextEvent.venue)}` : ""}</div>
+          </div>
+          <div className="kpi">
+            <div className="k">Field Cut</div>
+            <div className="v">{lb.totalCompetitors} <span className="sm">→ 20</span></div>
+            <div className="s">later in competition</div>
+          </div>
+        </div>
+
+        {!scored && (
+          <div className="banner">
+            <span className="seedtag">Seeding</span>
+            Athletes shown in <b>seed order</b> — competition not yet scored.
+            Event&nbsp;1 (<b>{schedule[0]?.name}</b>) begins <b>{schedule[0]?.dayLabel}, {fmtClock(schedule[0]?.startTime ?? null)}</b>.
+          </div>
+        )}
+
+        {/* ===== MAIN GRID ===== */}
+        <div className="grid">
+          {/* LEADERBOARD */}
+          <div className="card">
+            <div className="card-h">
+              <h3>{scored ? "Overall Standings" : "Start List"}</h3>
+              <span className="meta">{division === "men" ? "Men" : "Women"} · {lb.totalCompetitors} athletes</span>
+            </div>
+            <div className="tscroll">
+              <table className="lb">
+                <thead>
+                  <tr>
+                    <th className="l" style={{ width: 96 }}>{scored ? "Rank" : "Seed"}</th>
+                    <th className="l">Athlete</th>
+                    {columns.map((c) => <th key={c.code} title={c.name}>{c.code}</th>)}
+                    <th>{scored ? "Points" : ""}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((r, i) => {
+                    const pos = scored && r.rank > 0 ? r.rank : i + 1;
+                    return (
+                    <tr key={r.name + i} className={pos === 1 ? "r1" : ""}>
+                      <td className="l">
+                        <div className="rank"><span className="n">{pos}</span></div>
+                      </td>
+                      <td className="l">
+                        <div className="athlete">
+                          <Avatar row={r} />
+                          <div>
+                            <div className="ath">{r.name}<span className="cc">{r.countryCode}</span></div>
+                            <div className="aff">{r.affiliate || "—"}</div>
+                          </div>
+                        </div>
+                      </td>
+                      {columns.map((c) => {
+                        const s = r.scores.find((x) => x.ordinal === c.ordinal);
+                        return (
+                          <td className="ev" key={c.code}>
+                            {s && s.place != null
+                              ? <span className={placeClass(s.place)}>{s.place}</span>
+                              : <span className="plc empty">—</span>}
+                          </td>
+                        );
+                      })}
+                      <td className="tot">
+                        {scored && r.totalPoints != null ? (
+                          <div className="totwrap">
+                            <span className="num">{r.totalPoints}</span>
+                            <span className="bar"><i style={{ width: `${(r.totalPoints / maxPoints) * 100}%` }} /></span>
+                          </div>
+                        ) : (
+                          <div className="totwrap"><span className="num dim">—</span></div>
+                        )}
+                      </td>
+                    </tr>
+                    );
+                  })}
+                  {rows.length === 0 && (
+                    <tr className="morerow"><td colSpan={columns.length + 3}>No athletes match “{query}”.</td></tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* RIGHT RAIL — RUN SHEET */}
+          <div className="rail">
+            <div className="card">
+              <div className="card-h"><h3>Run Sheet</h3><span className="meta">by day</span></div>
+              <div className="dayrow" role="group" aria-label="Day">
+                {days.map((d) => (
+                  <button key={d.key} className="dbtn" aria-pressed={d.key === activeDay?.key}
+                    onClick={() => setDayKey(d.key)}>{d.short}</button>
+                ))}
+              </div>
+              <div className="run">
+                {activeDay?.entries.map((e) => (
+                  <div className="runrow" key={e.order}>
+                    <span className="nm">{e.name}<span className="c">{[e.codeLabel, fmtClock(e.startTime)].filter(Boolean).join(" · ")}</span></span>
+                    <span className={`st ${statusOf(e, completed)}`}>{statusLabel(e, completed)}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="card">
+              <div className="card-h"><h3>Venues</h3></div>
+              <div className="run">
+                <div className="runrow"><span className="nm">The Ranch<span className="c">Aromas / Morgan Hill</span></span></div>
+                <div className="runrow"><span className="nm">SAP Center<span className="c">San Jose, California</span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ===== SCHEDULE ===== */}
+        <section className="blk" id="schedule">
+          <div className="blk-h">
+            <h2>Schedule</h2>
+            <span className="c mono">{schedule.length} events · venue-local times · expand for heat draws</span>
+          </div>
+          <div className="card sched-scroll">
+            <table className="sch">
+              <tbody>
+                {days.flatMap((d) => [
+                  <tr className="dayhdr" key={`${d.key}-hdr`}>
+                    <td colSpan={4}>{d.label} — {venueShort(d.venue)}</td>
+                  </tr>,
+                  ...d.entries.map((e) => <EventRow key={e.order} e={e} />),
+                ])}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* ===== WORKOUTS ===== */}
+        <section className="blk" id="workouts">
+          <div className="blk-h">
+            <h2>Workouts</h2>
+            <span className="c mono">Individual division · loads ♀ / ♂</span>
+          </div>
+          <div className="wods">
+            {workouts.map((w) => <WorkoutCard key={w.eventId} w={w} />)}
+          </div>
+        </section>
+
+        <footer>
+          <span className="src">Source · <b>Official CrossFit Games API</b> (c3po.crossfit.com) + workout descriptions</span>
+          <span className="src">Snapshot · <b>{fmt(meta.generatedAt)}</b></span>
+        </footer>
+      </main>
+    </>
+  );
+}
+
+/* ---------- small pieces ---------- */
+
+function EventRow({ e }: { e: ScheduleEntry }) {
+  const athletes = e.heats.reduce((n, h) => n + h.lanes.length, 0);
+  return (
+    <tr>
+      <td className="tm">{fmtRange(e.startTime, e.endTime)}</td>
+      <td className="code">{e.codeLabel}</td>
+      <td>
+        <div className="nm">{e.name}{e.kicker && <span className="kick">{e.kicker}</span>}</div>
+        {e.heats.length > 0 && (
+          <details className="heats">
+            <summary>{e.heats.length} heat{e.heats.length === 1 ? "" : "s"} · {athletes} athletes</summary>
+            <div className="heatgrid">
+              {e.heats.map((h, i) => (
+                <div className="heat" key={i}>
+                  <div className="heat-h">Heat {h.number} · {h.gender}</div>
+                  <ol className="lanes">
+                    {h.lanes.map((l) => (
+                      <li key={l.lane}><b>{l.lane}</b>{l.name}</li>
+                    ))}
+                  </ol>
+                </div>
+              ))}
+            </div>
+          </details>
+        )}
+      </td>
+      <td className="ven">{venueShort(e.venue)}</td>
+    </tr>
+  );
+}
+
+function WorkoutCard({ w }: { w: WorkoutBlock }) {
+  return (
+    <div className="wod">
+      <div className="top"><span className="code">{w.code}</span><span className="tag">{w.dayLabel}</span></div>
+      <h4>{w.name}</h4>
+      <div className="lines">
+        {w.description.map((line, i) => {
+          const cls = /^[♀♂]/.test(line) ? "load" : /(:$|^then,?$)/i.test(line) ? "step" : "";
+          return <div key={i} className={cls}>{line}</div>;
+        })}
+      </div>
+    </div>
+  );
+}
+
+/* ---------- helpers ---------- */
+
+interface DayGroup {
+  key: string;
+  label: string;
+  short: string;
+  venue: string;
+  entries: ScheduleEntry[];
+}
+
+function groupByDay(schedule: ScheduleEntry[]): DayGroup[] {
+  const map = new Map<string, DayGroup>();
+  for (const e of schedule) {
+    if (!map.has(e.dayKey)) {
+      map.set(e.dayKey, {
+        key: e.dayKey,
+        label: e.dayLabel,
+        short: (e.dayLabel.match(/(\d+)\s*$/)?.[1]) ?? e.dayLabel,
+        venue: e.venue,
+        entries: [],
+      });
+    }
+    map.get(e.dayKey)!.entries.push(e);
+  }
+  return [...map.values()];
+}
+
+function shortName(r: AthleteRow): string {
+  return r.lastName || r.name;
+}
+
+function Avatar({ row }: { row: AthleteRow }) {
+  if (row.photo) {
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img className="avatar" src={row.photo} alt="" />;
+  }
+  const initials = `${row.firstName[0] ?? ""}${row.lastName[0] ?? ""}`.toUpperCase();
+  return <div className="avatar ph">{initials || "—"}</div>;
+}
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function fmtDateRange(a?: string, b?: string): string {
+  if (!a) return "July 2026";
+  const da = new Date(a);
+  const db = b ? new Date(b) : da;
+  const mo = MONTHS[da.getUTCMonth()];
+  const d1 = da.getUTCDate();
+  const d2 = db.getUTCDate();
+  const y = da.getUTCFullYear();
+  return d1 === d2 ? `${mo} ${d1}, ${y}` : `${mo} ${d1}–${d2}, ${y}`;
+}
+
+function placeClass(place: number): string {
+  if (place === 1) return "plc p1";
+  if (place <= 3) return "plc p2";
+  if (place > 10) return "plc plow";
+  return "plc";
+}
+
+function statusOf(e: ScheduleEntry, completed: number): string {
+  if (e.order < completed) return "done";
+  if (e.order === completed) return "next";
+  return "soon";
+}
+function statusLabel(e: ScheduleEntry, completed: number): string {
+  const s = statusOf(e, completed);
+  return s === "done" ? "Done" : s === "next" ? "Next" : "Sched";
+}
+
+// Times are stored as wall-clock in +00:00, so format from UTC parts.
+function fmtClock(iso: string | null): string {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (isNaN(+d)) return "";
+  let h = d.getUTCHours();
+  const m = d.getUTCMinutes();
+  const ap = h >= 12 ? "PM" : "AM";
+  h = h % 12 || 12;
+  return `${h}:${String(m).padStart(2, "0")} ${ap}`;
+}
+function fmtRange(a: string | null, b: string | null): string {
+  const s = fmtClock(a), e = fmtClock(b);
+  return e ? `${s} – ${e}` : s;
+}
+function venueShort(v: string): string {
+  return v.split("|")[0].trim();
+}
+
+function fmt(iso: string): string {
+  const d = new Date(iso);
+  return isNaN(+d) ? iso : d.toISOString().slice(0, 16).replace("T", " ") + " UTC";
+}

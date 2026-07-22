@@ -1,0 +1,4413 @@
+[
+  {
+    "order": 0,
+    "codeLabel": "IE1",
+    "codes": [
+      "IE1"
+    ],
+    "name": "The 2007 Hopper",
+    "kicker": "Women, Men",
+    "daySection": "Wednesday",
+    "dayKey": "2026-07-22",
+    "dayLabel": "Wed · Jul 22",
+    "startTime": "2026-07-22T16:00:00+0000",
+    "endTime": "2026-07-22T17:05:00+0000",
+    "venue": "Morgan Hill | The Ranch",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Rachel Noel"
+          },
+          {
+            "lane": 2,
+            "name": "Hannah Black"
+          },
+          {
+            "lane": 3,
+            "name": "Siria Meha"
+          },
+          {
+            "lane": 4,
+            "name": "Matilde Garnes"
+          },
+          {
+            "lane": 5,
+            "name": "Bergrós Björnsdóttir"
+          },
+          {
+            "lane": 6,
+            "name": "Janie Cheverie"
+          },
+          {
+            "lane": 7,
+            "name": "Ella Wilkinson"
+          },
+          {
+            "lane": 8,
+            "name": "Alex Gazan"
+          },
+          {
+            "lane": 9,
+            "name": "Miley Wade"
+          },
+          {
+            "lane": 10,
+            "name": "Elisa Fuliano"
+          },
+          {
+            "lane": 11,
+            "name": "Aline Wirz"
+          },
+          {
+            "lane": 12,
+            "name": "Holly Tynan"
+          },
+          {
+            "lane": 13,
+            "name": "Haley Adams"
+          },
+          {
+            "lane": 14,
+            "name": "Erica Folo"
+          },
+          {
+            "lane": 15,
+            "name": "Ellie Turner"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Madeline Sturt"
+          },
+          {
+            "lane": 2,
+            "name": "Aimee Cringle"
+          },
+          {
+            "lane": 3,
+            "name": "Anikha Greer"
+          },
+          {
+            "lane": 4,
+            "name": "Olivia Kerstetter"
+          },
+          {
+            "lane": 5,
+            "name": "Paige Rodgers"
+          },
+          {
+            "lane": 6,
+            "name": "Lucy Campbell"
+          },
+          {
+            "lane": 7,
+            "name": "Arielle Loewen"
+          },
+          {
+            "lane": 8,
+            "name": "Kyra Milligan"
+          },
+          {
+            "lane": 9,
+            "name": "Danielle Brandon"
+          },
+          {
+            "lane": 10,
+            "name": "Lucy McGonigle"
+          },
+          {
+            "lane": 11,
+            "name": "Mirjam von Rohr"
+          },
+          {
+            "lane": 12,
+            "name": "Alexis Raptis"
+          },
+          {
+            "lane": 13,
+            "name": "Lydia Fish"
+          },
+          {
+            "lane": 14,
+            "name": "Emma Lawson"
+          },
+          {
+            "lane": 15,
+            "name": "Abigail Domit"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Quinn Robinson"
+          },
+          {
+            "lane": 2,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 3,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 4,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 5,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 6,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 7,
+            "name": "James Sprague"
+          },
+          {
+            "lane": 8,
+            "name": "Aniol Ekai"
+          },
+          {
+            "lane": 9,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 10,
+            "name": "Patrick Vellner"
+          },
+          {
+            "lane": 11,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 12,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 13,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 14,
+            "name": "Ty Jenkins"
+          },
+          {
+            "lane": 15,
+            "name": "Kalyan Souza"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Victor Hoffer"
+          },
+          {
+            "lane": 2,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 3,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 4,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 5,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 6,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 7,
+            "name": "Jeffrey Adler"
+          },
+          {
+            "lane": 8,
+            "name": "Austin Hatfield"
+          },
+          {
+            "lane": 9,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 10,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 11,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 12,
+            "name": "Justin Medeiros"
+          },
+          {
+            "lane": 13,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 14,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 15,
+            "name": "Moritz Fiebig"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "order": 1,
+    "codeLabel": "IE2",
+    "codes": [
+      "IE2"
+    ],
+    "name": "Ranch 7200",
+    "kicker": "",
+    "daySection": "Wednesday",
+    "dayKey": "2026-07-22",
+    "dayLabel": "Wed · Jul 22",
+    "startTime": "2026-07-22T18:05:00+0000",
+    "endTime": "2026-07-22T19:05:00+0000",
+    "venue": "The Ranch",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Kalyan Souza"
+          },
+          {
+            "lane": 2,
+            "name": "Ty Jenkins"
+          },
+          {
+            "lane": 3,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 4,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 5,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 6,
+            "name": "Patrick Vellner"
+          },
+          {
+            "lane": 7,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 8,
+            "name": "Aniol Ekai"
+          },
+          {
+            "lane": 9,
+            "name": "Victor Hoffer"
+          },
+          {
+            "lane": 10,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 11,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 12,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 13,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 14,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 15,
+            "name": "Jeffrey Adler"
+          },
+          {
+            "lane": 16,
+            "name": "Austin Hatfield"
+          },
+          {
+            "lane": 17,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 18,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 19,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 20,
+            "name": "Justin Medeiros"
+          },
+          {
+            "lane": 21,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 22,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 23,
+            "name": "Moritz Fiebig"
+          },
+          {
+            "lane": 24,
+            "name": "James Sprague"
+          },
+          {
+            "lane": 25,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 26,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 27,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 28,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 29,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 30,
+            "name": "Quinn Robinson"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "order": 2,
+    "codeLabel": "IE3–5",
+    "codes": [
+      "IE3",
+      "IE4",
+      "IE5"
+    ],
+    "name": "The CrossFit Total",
+    "kicker": "",
+    "daySection": "Wednesday",
+    "dayKey": "2026-07-22",
+    "dayLabel": "Wed · Jul 22",
+    "startTime": "2026-07-22T20:35:00+0000",
+    "endTime": "2026-07-22T21:28:00+0000",
+    "venue": "Morgan Hill",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Siria Meha"
+          },
+          {
+            "lane": 2,
+            "name": "Paige Rodgers"
+          },
+          {
+            "lane": 3,
+            "name": "Mirjam von Rohr"
+          },
+          {
+            "lane": 4,
+            "name": "Matilde Garnes"
+          },
+          {
+            "lane": 5,
+            "name": "Lydia Fish"
+          },
+          {
+            "lane": 6,
+            "name": "Lucy Campbell"
+          },
+          {
+            "lane": 7,
+            "name": "Janie Cheverie"
+          },
+          {
+            "lane": 8,
+            "name": "Hannah Black"
+          },
+          {
+            "lane": 9,
+            "name": "Erica Folo"
+          },
+          {
+            "lane": 10,
+            "name": "Ellie Turner"
+          },
+          {
+            "lane": 11,
+            "name": "Elisa Fuliano"
+          },
+          {
+            "lane": 12,
+            "name": "Bergrós Björnsdóttir"
+          },
+          {
+            "lane": 13,
+            "name": "Anikha Greer"
+          },
+          {
+            "lane": 14,
+            "name": "Alexis Raptis"
+          },
+          {
+            "lane": 15,
+            "name": "Aimee Cringle"
+          },
+          {
+            "lane": 16,
+            "name": "Abigail Domit"
+          },
+          {
+            "lane": 17,
+            "name": "Alex Gazan"
+          },
+          {
+            "lane": 18,
+            "name": "Aline Wirz"
+          },
+          {
+            "lane": 19,
+            "name": "Arielle Loewen"
+          },
+          {
+            "lane": 20,
+            "name": "Danielle Brandon"
+          },
+          {
+            "lane": 21,
+            "name": "Ella Wilkinson"
+          },
+          {
+            "lane": 22,
+            "name": "Emma Lawson"
+          },
+          {
+            "lane": 23,
+            "name": "Haley Adams"
+          },
+          {
+            "lane": 24,
+            "name": "Holly Tynan"
+          },
+          {
+            "lane": 25,
+            "name": "Kyra Milligan"
+          },
+          {
+            "lane": 26,
+            "name": "Lucy McGonigle"
+          },
+          {
+            "lane": 27,
+            "name": "Madeline Sturt"
+          },
+          {
+            "lane": 28,
+            "name": "Miley Wade"
+          },
+          {
+            "lane": 29,
+            "name": "Olivia Kerstetter"
+          },
+          {
+            "lane": 30,
+            "name": "Rachel Noel"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Victor Hoffer"
+          },
+          {
+            "lane": 2,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 3,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 4,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 5,
+            "name": "Patrick Vellner"
+          },
+          {
+            "lane": 6,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 7,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 8,
+            "name": "Justin Medeiros"
+          },
+          {
+            "lane": 9,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 10,
+            "name": "James Sprague"
+          },
+          {
+            "lane": 11,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 12,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 13,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 14,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 15,
+            "name": "Austin Hatfield"
+          },
+          {
+            "lane": 16,
+            "name": "Aniol Ekai"
+          },
+          {
+            "lane": 17,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 18,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 19,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 20,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 21,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 22,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 23,
+            "name": "Jeffrey Adler"
+          },
+          {
+            "lane": 24,
+            "name": "Kalyan Souza"
+          },
+          {
+            "lane": 25,
+            "name": "Moritz Fiebig"
+          },
+          {
+            "lane": 26,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 27,
+            "name": "Quinn Robinson"
+          },
+          {
+            "lane": 28,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 29,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 30,
+            "name": "Ty Jenkins"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "order": 3,
+    "codeLabel": "IE6",
+    "codes": [
+      "IE6"
+    ],
+    "name": "Grass Oval Bike Race",
+    "kicker": "",
+    "daySection": "Wednesday",
+    "dayKey": "2026-07-22",
+    "dayLabel": "Wed · Jul 22",
+    "startTime": "2026-07-22T21:40:00+0000",
+    "endTime": "2026-07-22T23:40:00+0000",
+    "venue": "Morgan Hill",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Rachel Noel"
+          },
+          {
+            "lane": 2,
+            "name": "Olivia Kerstetter"
+          },
+          {
+            "lane": 3,
+            "name": "Miley Wade"
+          },
+          {
+            "lane": 4,
+            "name": "Madeline Sturt"
+          },
+          {
+            "lane": 5,
+            "name": "Lucy McGonigle"
+          },
+          {
+            "lane": 6,
+            "name": "Kyra Milligan"
+          },
+          {
+            "lane": 7,
+            "name": "Holly Tynan"
+          },
+          {
+            "lane": 8,
+            "name": "Hannah Black"
+          },
+          {
+            "lane": 9,
+            "name": "Janie Cheverie"
+          },
+          {
+            "lane": 10,
+            "name": "Lucy Campbell"
+          },
+          {
+            "lane": 11,
+            "name": "Lydia Fish"
+          },
+          {
+            "lane": 12,
+            "name": "Matilde Garnes"
+          },
+          {
+            "lane": 13,
+            "name": "Mirjam von Rohr"
+          },
+          {
+            "lane": 14,
+            "name": "Paige Rodgers"
+          },
+          {
+            "lane": 15,
+            "name": "Siria Meha"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Erica Folo"
+          },
+          {
+            "lane": 2,
+            "name": "Ellie Turner"
+          },
+          {
+            "lane": 3,
+            "name": "Elisa Fuliano"
+          },
+          {
+            "lane": 4,
+            "name": "Bergrós Björnsdóttir"
+          },
+          {
+            "lane": 5,
+            "name": "Anikha Greer"
+          },
+          {
+            "lane": 6,
+            "name": "Alexis Raptis"
+          },
+          {
+            "lane": 7,
+            "name": "Aimee Cringle"
+          },
+          {
+            "lane": 8,
+            "name": "Abigail Domit"
+          },
+          {
+            "lane": 9,
+            "name": "Alex Gazan"
+          },
+          {
+            "lane": 10,
+            "name": "Aline Wirz"
+          },
+          {
+            "lane": 11,
+            "name": "Arielle Loewen"
+          },
+          {
+            "lane": 12,
+            "name": "Danielle Brandon"
+          },
+          {
+            "lane": 13,
+            "name": "Ella Wilkinson"
+          },
+          {
+            "lane": 14,
+            "name": "Emma Lawson"
+          },
+          {
+            "lane": 15,
+            "name": "Haley Adams"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Ty Jenkins"
+          },
+          {
+            "lane": 2,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 3,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 4,
+            "name": "Quinn Robinson"
+          },
+          {
+            "lane": 5,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 6,
+            "name": "Moritz Fiebig"
+          },
+          {
+            "lane": 7,
+            "name": "Kalyan Souza"
+          },
+          {
+            "lane": 8,
+            "name": "Justin Medeiros"
+          },
+          {
+            "lane": 9,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 10,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 11,
+            "name": "Patrick Vellner"
+          },
+          {
+            "lane": 12,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 13,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 14,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 15,
+            "name": "Victor Hoffer"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 2,
+            "name": "James Sprague"
+          },
+          {
+            "lane": 3,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 4,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 5,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 6,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 7,
+            "name": "Austin Hatfield"
+          },
+          {
+            "lane": 8,
+            "name": "Aniol Ekai"
+          },
+          {
+            "lane": 9,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 10,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 11,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 12,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 13,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 14,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 15,
+            "name": "Jeffrey Adler"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "order": 4,
+    "codeLabel": "",
+    "codes": [],
+    "name": "Opening Ceremony",
+    "kicker": "",
+    "daySection": "Friday",
+    "dayKey": "2026-07-24",
+    "dayLabel": "Fri · Jul 24",
+    "startTime": "2026-07-24T16:15:00+0000",
+    "endTime": "2026-07-24T17:15:00+0000",
+    "venue": "SAP Center | San Jose, California",
+    "heats": []
+  },
+  {
+    "order": 5,
+    "codeLabel": "IE8",
+    "codes": [
+      "IE8"
+    ],
+    "name": "Event 8",
+    "kicker": "",
+    "daySection": "Friday",
+    "dayKey": "2026-07-24",
+    "dayLabel": "Fri · Jul 24",
+    "startTime": "2026-07-24T19:40:00+0000",
+    "endTime": "2026-07-24T21:15:00+0000",
+    "venue": "SAP Center | San Jose, California",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Siria Meha"
+          },
+          {
+            "lane": 2,
+            "name": "Paige Rodgers"
+          },
+          {
+            "lane": 3,
+            "name": "Mirjam von Rohr"
+          },
+          {
+            "lane": 4,
+            "name": "Matilde Garnes"
+          },
+          {
+            "lane": 5,
+            "name": "Lydia Fish"
+          },
+          {
+            "lane": 6,
+            "name": "Lucy McGonigle"
+          },
+          {
+            "lane": 7,
+            "name": "Madeline Sturt"
+          },
+          {
+            "lane": 8,
+            "name": "Miley Wade"
+          },
+          {
+            "lane": 9,
+            "name": "Olivia Kerstetter"
+          },
+          {
+            "lane": 10,
+            "name": "Rachel Noel"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Lucy Campbell"
+          },
+          {
+            "lane": 2,
+            "name": "Janie Cheverie"
+          },
+          {
+            "lane": 3,
+            "name": "Hannah Black"
+          },
+          {
+            "lane": 4,
+            "name": "Erica Folo"
+          },
+          {
+            "lane": 5,
+            "name": "Ellie Turner"
+          },
+          {
+            "lane": 6,
+            "name": "Ella Wilkinson"
+          },
+          {
+            "lane": 7,
+            "name": "Emma Lawson"
+          },
+          {
+            "lane": 8,
+            "name": "Haley Adams"
+          },
+          {
+            "lane": 9,
+            "name": "Holly Tynan"
+          },
+          {
+            "lane": 10,
+            "name": "Kyra Milligan"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Elisa Fuliano"
+          },
+          {
+            "lane": 2,
+            "name": "Bergrós Björnsdóttir"
+          },
+          {
+            "lane": 3,
+            "name": "Anikha Greer"
+          },
+          {
+            "lane": 4,
+            "name": "Alexis Raptis"
+          },
+          {
+            "lane": 5,
+            "name": "Aimee Cringle"
+          },
+          {
+            "lane": 6,
+            "name": "Abigail Domit"
+          },
+          {
+            "lane": 7,
+            "name": "Alex Gazan"
+          },
+          {
+            "lane": 8,
+            "name": "Aline Wirz"
+          },
+          {
+            "lane": 9,
+            "name": "Arielle Loewen"
+          },
+          {
+            "lane": 10,
+            "name": "Danielle Brandon"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Aniol Ekai"
+          },
+          {
+            "lane": 2,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 3,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 4,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 5,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 6,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 7,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 8,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 9,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 10,
+            "name": "Austin Hatfield"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 2,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 3,
+            "name": "Jeffrey Adler"
+          },
+          {
+            "lane": 4,
+            "name": "Kalyan Souza"
+          },
+          {
+            "lane": 5,
+            "name": "Moritz Fiebig"
+          },
+          {
+            "lane": 6,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 7,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 8,
+            "name": "Justin Medeiros"
+          },
+          {
+            "lane": 9,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 10,
+            "name": "James Sprague"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 2,
+            "name": "Quinn Robinson"
+          },
+          {
+            "lane": 3,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 4,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 5,
+            "name": "Ty Jenkins"
+          },
+          {
+            "lane": 6,
+            "name": "Victor Hoffer"
+          },
+          {
+            "lane": 7,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 8,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 9,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 10,
+            "name": "Patrick Vellner"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "order": 6,
+    "codeLabel": "IE9",
+    "codes": [
+      "IE9"
+    ],
+    "name": "Event 9",
+    "kicker": "",
+    "daySection": "Friday",
+    "dayKey": "2026-07-24",
+    "dayLabel": "Fri · Jul 24",
+    "startTime": "2026-07-24T21:30:00+0000",
+    "endTime": "2026-07-24T22:19:00+0000",
+    "venue": "SAP Center | San Jose, California",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Siria Meha"
+          },
+          {
+            "lane": 2,
+            "name": "Paige Rodgers"
+          },
+          {
+            "lane": 3,
+            "name": "Mirjam von Rohr"
+          },
+          {
+            "lane": 4,
+            "name": "Matilde Garnes"
+          },
+          {
+            "lane": 5,
+            "name": "Lydia Fish"
+          },
+          {
+            "lane": 6,
+            "name": "Lucy Campbell"
+          },
+          {
+            "lane": 7,
+            "name": "Janie Cheverie"
+          },
+          {
+            "lane": 8,
+            "name": "Hannah Black"
+          },
+          {
+            "lane": 9,
+            "name": "Erica Folo"
+          },
+          {
+            "lane": 10,
+            "name": "Ellie Turner"
+          },
+          {
+            "lane": 11,
+            "name": "Elisa Fuliano"
+          },
+          {
+            "lane": 12,
+            "name": "Bergrós Björnsdóttir"
+          },
+          {
+            "lane": 13,
+            "name": "Anikha Greer"
+          },
+          {
+            "lane": 14,
+            "name": "Alexis Raptis"
+          },
+          {
+            "lane": 15,
+            "name": "Aimee Cringle"
+          },
+          {
+            "lane": 16,
+            "name": "Abigail Domit"
+          },
+          {
+            "lane": 17,
+            "name": "Alex Gazan"
+          },
+          {
+            "lane": 18,
+            "name": "Aline Wirz"
+          },
+          {
+            "lane": 19,
+            "name": "Arielle Loewen"
+          },
+          {
+            "lane": 20,
+            "name": "Danielle Brandon"
+          },
+          {
+            "lane": 21,
+            "name": "Ella Wilkinson"
+          },
+          {
+            "lane": 22,
+            "name": "Emma Lawson"
+          },
+          {
+            "lane": 23,
+            "name": "Haley Adams"
+          },
+          {
+            "lane": 24,
+            "name": "Holly Tynan"
+          },
+          {
+            "lane": 25,
+            "name": "Kyra Milligan"
+          },
+          {
+            "lane": 26,
+            "name": "Lucy McGonigle"
+          },
+          {
+            "lane": 27,
+            "name": "Madeline Sturt"
+          },
+          {
+            "lane": 28,
+            "name": "Miley Wade"
+          },
+          {
+            "lane": 29,
+            "name": "Olivia Kerstetter"
+          },
+          {
+            "lane": 30,
+            "name": "Rachel Noel"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Aniol Ekai"
+          },
+          {
+            "lane": 2,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 3,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 4,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 5,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 6,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 7,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 8,
+            "name": "Jeffrey Adler"
+          },
+          {
+            "lane": 9,
+            "name": "Kalyan Souza"
+          },
+          {
+            "lane": 10,
+            "name": "Moritz Fiebig"
+          },
+          {
+            "lane": 11,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 12,
+            "name": "Quinn Robinson"
+          },
+          {
+            "lane": 13,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 14,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 15,
+            "name": "Ty Jenkins"
+          },
+          {
+            "lane": 16,
+            "name": "Victor Hoffer"
+          },
+          {
+            "lane": 17,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 18,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 19,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 20,
+            "name": "Patrick Vellner"
+          },
+          {
+            "lane": 21,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 22,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 23,
+            "name": "Justin Medeiros"
+          },
+          {
+            "lane": 24,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 25,
+            "name": "James Sprague"
+          },
+          {
+            "lane": 26,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 27,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 28,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 29,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 30,
+            "name": "Austin Hatfield"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "order": 7,
+    "codeLabel": "IE10",
+    "codes": [
+      "IE10"
+    ],
+    "name": "Event 10",
+    "kicker": "",
+    "daySection": "Friday",
+    "dayKey": "2026-07-24",
+    "dayLabel": "Fri · Jul 24",
+    "startTime": "2026-07-24T22:35:00+0000",
+    "endTime": "2026-07-25T00:25:00+0000",
+    "venue": "SAP Center | San Jose, California",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Rachel Noel"
+          },
+          {
+            "lane": 2,
+            "name": "Olivia Kerstetter"
+          },
+          {
+            "lane": 3,
+            "name": "Miley Wade"
+          },
+          {
+            "lane": 4,
+            "name": "Madeline Sturt"
+          },
+          {
+            "lane": 5,
+            "name": "Lucy McGonigle"
+          },
+          {
+            "lane": 6,
+            "name": "Kyra Milligan"
+          },
+          {
+            "lane": 7,
+            "name": "Holly Tynan"
+          },
+          {
+            "lane": 8,
+            "name": "Hannah Black"
+          },
+          {
+            "lane": 9,
+            "name": "Janie Cheverie"
+          },
+          {
+            "lane": 10,
+            "name": "Lucy Campbell"
+          },
+          {
+            "lane": 11,
+            "name": "Lydia Fish"
+          },
+          {
+            "lane": 12,
+            "name": "Matilde Garnes"
+          },
+          {
+            "lane": 13,
+            "name": "Mirjam von Rohr"
+          },
+          {
+            "lane": 14,
+            "name": "Paige Rodgers"
+          },
+          {
+            "lane": 15,
+            "name": "Siria Meha"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Erica Folo"
+          },
+          {
+            "lane": 2,
+            "name": "Ellie Turner"
+          },
+          {
+            "lane": 3,
+            "name": "Elisa Fuliano"
+          },
+          {
+            "lane": 4,
+            "name": "Bergrós Björnsdóttir"
+          },
+          {
+            "lane": 5,
+            "name": "Anikha Greer"
+          },
+          {
+            "lane": 6,
+            "name": "Alexis Raptis"
+          },
+          {
+            "lane": 7,
+            "name": "Aimee Cringle"
+          },
+          {
+            "lane": 8,
+            "name": "Abigail Domit"
+          },
+          {
+            "lane": 9,
+            "name": "Alex Gazan"
+          },
+          {
+            "lane": 10,
+            "name": "Aline Wirz"
+          },
+          {
+            "lane": 11,
+            "name": "Arielle Loewen"
+          },
+          {
+            "lane": 12,
+            "name": "Danielle Brandon"
+          },
+          {
+            "lane": 13,
+            "name": "Ella Wilkinson"
+          },
+          {
+            "lane": 14,
+            "name": "Emma Lawson"
+          },
+          {
+            "lane": 15,
+            "name": "Haley Adams"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Austin Hatfield"
+          },
+          {
+            "lane": 2,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 3,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 4,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 5,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 6,
+            "name": "James Sprague"
+          },
+          {
+            "lane": 7,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 8,
+            "name": "Jeffrey Adler"
+          },
+          {
+            "lane": 9,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 10,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 11,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 12,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 13,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 14,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 15,
+            "name": "Aniol Ekai"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Kalyan Souza"
+          },
+          {
+            "lane": 2,
+            "name": "Moritz Fiebig"
+          },
+          {
+            "lane": 3,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 4,
+            "name": "Quinn Robinson"
+          },
+          {
+            "lane": 5,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 6,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 7,
+            "name": "Ty Jenkins"
+          },
+          {
+            "lane": 8,
+            "name": "Victor Hoffer"
+          },
+          {
+            "lane": 9,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 10,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 11,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 12,
+            "name": "Patrick Vellner"
+          },
+          {
+            "lane": 13,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 14,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 15,
+            "name": "Justin Medeiros"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "order": 8,
+    "codeLabel": "IE11",
+    "codes": [
+      "IE11"
+    ],
+    "name": "Event 11",
+    "kicker": "",
+    "daySection": "Friday",
+    "dayKey": "2026-07-25",
+    "dayLabel": "Sat · Jul 25",
+    "startTime": "2026-07-25T00:45:00+0000",
+    "endTime": "2026-07-25T01:45:00+0000",
+    "venue": "SAP Center | San Jose, California",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Siria Meha"
+          },
+          {
+            "lane": 2,
+            "name": "Paige Rodgers"
+          },
+          {
+            "lane": 3,
+            "name": "Mirjam von Rohr"
+          },
+          {
+            "lane": 4,
+            "name": "Matilde Garnes"
+          },
+          {
+            "lane": 5,
+            "name": "Lydia Fish"
+          },
+          {
+            "lane": 6,
+            "name": "Lucy McGonigle"
+          },
+          {
+            "lane": 7,
+            "name": "Madeline Sturt"
+          },
+          {
+            "lane": 8,
+            "name": "Miley Wade"
+          },
+          {
+            "lane": 9,
+            "name": "Olivia Kerstetter"
+          },
+          {
+            "lane": 10,
+            "name": "Rachel Noel"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Lucy Campbell"
+          },
+          {
+            "lane": 2,
+            "name": "Janie Cheverie"
+          },
+          {
+            "lane": 3,
+            "name": "Hannah Black"
+          },
+          {
+            "lane": 4,
+            "name": "Erica Folo"
+          },
+          {
+            "lane": 5,
+            "name": "Ellie Turner"
+          },
+          {
+            "lane": 6,
+            "name": "Ella Wilkinson"
+          },
+          {
+            "lane": 7,
+            "name": "Emma Lawson"
+          },
+          {
+            "lane": 8,
+            "name": "Haley Adams"
+          },
+          {
+            "lane": 9,
+            "name": "Holly Tynan"
+          },
+          {
+            "lane": 10,
+            "name": "Kyra Milligan"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Elisa Fuliano"
+          },
+          {
+            "lane": 2,
+            "name": "Bergrós Björnsdóttir"
+          },
+          {
+            "lane": 3,
+            "name": "Anikha Greer"
+          },
+          {
+            "lane": 4,
+            "name": "Alexis Raptis"
+          },
+          {
+            "lane": 5,
+            "name": "Aimee Cringle"
+          },
+          {
+            "lane": 6,
+            "name": "Abigail Domit"
+          },
+          {
+            "lane": 7,
+            "name": "Alex Gazan"
+          },
+          {
+            "lane": 8,
+            "name": "Aline Wirz"
+          },
+          {
+            "lane": 9,
+            "name": "Arielle Loewen"
+          },
+          {
+            "lane": 10,
+            "name": "Danielle Brandon"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Aniol Ekai"
+          },
+          {
+            "lane": 2,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 3,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 4,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 5,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 6,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 7,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 8,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 9,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 10,
+            "name": "Austin Hatfield"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 2,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 3,
+            "name": "Jeffrey Adler"
+          },
+          {
+            "lane": 4,
+            "name": "Kalyan Souza"
+          },
+          {
+            "lane": 5,
+            "name": "Moritz Fiebig"
+          },
+          {
+            "lane": 6,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 7,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 8,
+            "name": "Justin Medeiros"
+          },
+          {
+            "lane": 9,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 10,
+            "name": "James Sprague"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 2,
+            "name": "Quinn Robinson"
+          },
+          {
+            "lane": 3,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 4,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 5,
+            "name": "Ty Jenkins"
+          },
+          {
+            "lane": 6,
+            "name": "Victor Hoffer"
+          },
+          {
+            "lane": 7,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 8,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 9,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 10,
+            "name": "Patrick Vellner"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "order": 9,
+    "codeLabel": "IE12",
+    "codes": [
+      "IE12"
+    ],
+    "name": "Event 12",
+    "kicker": "",
+    "daySection": "Friday",
+    "dayKey": "2026-07-25",
+    "dayLabel": "Sat · Jul 25",
+    "startTime": "2026-07-25T02:40:00+0000",
+    "endTime": "2026-07-25T03:50:00+0000",
+    "venue": "SAP Center | San Jose, California",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Siria Meha"
+          },
+          {
+            "lane": 2,
+            "name": "Paige Rodgers"
+          },
+          {
+            "lane": 3,
+            "name": "Mirjam von Rohr"
+          },
+          {
+            "lane": 4,
+            "name": "Matilde Garnes"
+          },
+          {
+            "lane": 5,
+            "name": "Lydia Fish"
+          },
+          {
+            "lane": 6,
+            "name": "Lucy McGonigle"
+          },
+          {
+            "lane": 7,
+            "name": "Madeline Sturt"
+          },
+          {
+            "lane": 8,
+            "name": "Miley Wade"
+          },
+          {
+            "lane": 9,
+            "name": "Olivia Kerstetter"
+          },
+          {
+            "lane": 10,
+            "name": "Rachel Noel"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Lucy Campbell"
+          },
+          {
+            "lane": 2,
+            "name": "Janie Cheverie"
+          },
+          {
+            "lane": 3,
+            "name": "Hannah Black"
+          },
+          {
+            "lane": 4,
+            "name": "Erica Folo"
+          },
+          {
+            "lane": 5,
+            "name": "Ellie Turner"
+          },
+          {
+            "lane": 6,
+            "name": "Ella Wilkinson"
+          },
+          {
+            "lane": 7,
+            "name": "Emma Lawson"
+          },
+          {
+            "lane": 8,
+            "name": "Haley Adams"
+          },
+          {
+            "lane": 9,
+            "name": "Holly Tynan"
+          },
+          {
+            "lane": 10,
+            "name": "Kyra Milligan"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Elisa Fuliano"
+          },
+          {
+            "lane": 2,
+            "name": "Bergrós Björnsdóttir"
+          },
+          {
+            "lane": 3,
+            "name": "Anikha Greer"
+          },
+          {
+            "lane": 4,
+            "name": "Alexis Raptis"
+          },
+          {
+            "lane": 5,
+            "name": "Aimee Cringle"
+          },
+          {
+            "lane": 6,
+            "name": "Abigail Domit"
+          },
+          {
+            "lane": 7,
+            "name": "Alex Gazan"
+          },
+          {
+            "lane": 8,
+            "name": "Aline Wirz"
+          },
+          {
+            "lane": 9,
+            "name": "Arielle Loewen"
+          },
+          {
+            "lane": 10,
+            "name": "Danielle Brandon"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Aniol Ekai"
+          },
+          {
+            "lane": 2,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 3,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 4,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 5,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 6,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 7,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 8,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 9,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 10,
+            "name": "Austin Hatfield"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 2,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 3,
+            "name": "Jeffrey Adler"
+          },
+          {
+            "lane": 4,
+            "name": "Kalyan Souza"
+          },
+          {
+            "lane": 5,
+            "name": "Moritz Fiebig"
+          },
+          {
+            "lane": 6,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 7,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 8,
+            "name": "Justin Medeiros"
+          },
+          {
+            "lane": 9,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 10,
+            "name": "James Sprague"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 2,
+            "name": "Quinn Robinson"
+          },
+          {
+            "lane": 3,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 4,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 5,
+            "name": "Ty Jenkins"
+          },
+          {
+            "lane": 6,
+            "name": "Victor Hoffer"
+          },
+          {
+            "lane": 7,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 8,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 9,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 10,
+            "name": "Patrick Vellner"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "order": 10,
+    "codeLabel": "IE13",
+    "codes": [
+      "IE13"
+    ],
+    "name": "500 Run",
+    "kicker": "",
+    "daySection": "Saturday",
+    "dayKey": "2026-07-25",
+    "dayLabel": "Sat · Jul 25",
+    "startTime": "2026-07-25T17:00:00+0000",
+    "endTime": "2026-07-25T17:20:00+0000",
+    "venue": "SAP Center | San Jose, California",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Rachel Noel"
+          },
+          {
+            "lane": 2,
+            "name": "Olivia Kerstetter"
+          },
+          {
+            "lane": 3,
+            "name": "Miley Wade"
+          },
+          {
+            "lane": 4,
+            "name": "Madeline Sturt"
+          },
+          {
+            "lane": 5,
+            "name": "Lucy McGonigle"
+          },
+          {
+            "lane": 6,
+            "name": "Kyra Milligan"
+          },
+          {
+            "lane": 7,
+            "name": "Holly Tynan"
+          },
+          {
+            "lane": 8,
+            "name": "Hannah Black"
+          },
+          {
+            "lane": 9,
+            "name": "Janie Cheverie"
+          },
+          {
+            "lane": 10,
+            "name": "Lucy Campbell"
+          },
+          {
+            "lane": 11,
+            "name": "Lydia Fish"
+          },
+          {
+            "lane": 12,
+            "name": "Matilde Garnes"
+          },
+          {
+            "lane": 13,
+            "name": "Mirjam von Rohr"
+          },
+          {
+            "lane": 14,
+            "name": "Paige Rodgers"
+          },
+          {
+            "lane": 15,
+            "name": "Siria Meha"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Erica Folo"
+          },
+          {
+            "lane": 2,
+            "name": "Ellie Turner"
+          },
+          {
+            "lane": 3,
+            "name": "Elisa Fuliano"
+          },
+          {
+            "lane": 4,
+            "name": "Bergrós Björnsdóttir"
+          },
+          {
+            "lane": 5,
+            "name": "Anikha Greer"
+          },
+          {
+            "lane": 6,
+            "name": "Alexis Raptis"
+          },
+          {
+            "lane": 7,
+            "name": "Aimee Cringle"
+          },
+          {
+            "lane": 8,
+            "name": "Abigail Domit"
+          },
+          {
+            "lane": 9,
+            "name": "Alex Gazan"
+          },
+          {
+            "lane": 10,
+            "name": "Aline Wirz"
+          },
+          {
+            "lane": 11,
+            "name": "Arielle Loewen"
+          },
+          {
+            "lane": 12,
+            "name": "Danielle Brandon"
+          },
+          {
+            "lane": 13,
+            "name": "Ella Wilkinson"
+          },
+          {
+            "lane": 14,
+            "name": "Emma Lawson"
+          },
+          {
+            "lane": 15,
+            "name": "Haley Adams"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Austin Hatfield"
+          },
+          {
+            "lane": 2,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 3,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 4,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 5,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 6,
+            "name": "James Sprague"
+          },
+          {
+            "lane": 7,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 8,
+            "name": "Jeffrey Adler"
+          },
+          {
+            "lane": 9,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 10,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 11,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 12,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 13,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 14,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 15,
+            "name": "Aniol Ekai"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Kalyan Souza"
+          },
+          {
+            "lane": 2,
+            "name": "Moritz Fiebig"
+          },
+          {
+            "lane": 3,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 4,
+            "name": "Quinn Robinson"
+          },
+          {
+            "lane": 5,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 6,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 7,
+            "name": "Ty Jenkins"
+          },
+          {
+            "lane": 8,
+            "name": "Victor Hoffer"
+          },
+          {
+            "lane": 9,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 10,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 11,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 12,
+            "name": "Patrick Vellner"
+          },
+          {
+            "lane": 13,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 14,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 15,
+            "name": "Justin Medeiros"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "order": 11,
+    "codeLabel": "IE14",
+    "codes": [
+      "IE14"
+    ],
+    "name": "Event 14",
+    "kicker": "",
+    "daySection": "Saturday",
+    "dayKey": "2026-07-25",
+    "dayLabel": "Sat · Jul 25",
+    "startTime": "2026-07-25T18:00:00+0000",
+    "endTime": "2026-07-25T20:10:00+0000",
+    "venue": "SAP Center | San Jose, California",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Siria Meha"
+          },
+          {
+            "lane": 2,
+            "name": "Paige Rodgers"
+          },
+          {
+            "lane": 3,
+            "name": "Mirjam von Rohr"
+          },
+          {
+            "lane": 4,
+            "name": "Matilde Garnes"
+          },
+          {
+            "lane": 5,
+            "name": "Lydia Fish"
+          },
+          {
+            "lane": 6,
+            "name": "Lucy McGonigle"
+          },
+          {
+            "lane": 7,
+            "name": "Madeline Sturt"
+          },
+          {
+            "lane": 8,
+            "name": "Miley Wade"
+          },
+          {
+            "lane": 9,
+            "name": "Olivia Kerstetter"
+          },
+          {
+            "lane": 10,
+            "name": "Rachel Noel"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Lucy Campbell"
+          },
+          {
+            "lane": 2,
+            "name": "Janie Cheverie"
+          },
+          {
+            "lane": 3,
+            "name": "Hannah Black"
+          },
+          {
+            "lane": 4,
+            "name": "Erica Folo"
+          },
+          {
+            "lane": 5,
+            "name": "Ellie Turner"
+          },
+          {
+            "lane": 6,
+            "name": "Ella Wilkinson"
+          },
+          {
+            "lane": 7,
+            "name": "Emma Lawson"
+          },
+          {
+            "lane": 8,
+            "name": "Haley Adams"
+          },
+          {
+            "lane": 9,
+            "name": "Holly Tynan"
+          },
+          {
+            "lane": 10,
+            "name": "Kyra Milligan"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Elisa Fuliano"
+          },
+          {
+            "lane": 2,
+            "name": "Bergrós Björnsdóttir"
+          },
+          {
+            "lane": 3,
+            "name": "Anikha Greer"
+          },
+          {
+            "lane": 4,
+            "name": "Alexis Raptis"
+          },
+          {
+            "lane": 5,
+            "name": "Aimee Cringle"
+          },
+          {
+            "lane": 6,
+            "name": "Abigail Domit"
+          },
+          {
+            "lane": 7,
+            "name": "Alex Gazan"
+          },
+          {
+            "lane": 8,
+            "name": "Aline Wirz"
+          },
+          {
+            "lane": 9,
+            "name": "Arielle Loewen"
+          },
+          {
+            "lane": 10,
+            "name": "Danielle Brandon"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Aniol Ekai"
+          },
+          {
+            "lane": 2,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 3,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 4,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 5,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 6,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 7,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 8,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 9,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 10,
+            "name": "Austin Hatfield"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 2,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 3,
+            "name": "Jeffrey Adler"
+          },
+          {
+            "lane": 4,
+            "name": "Kalyan Souza"
+          },
+          {
+            "lane": 5,
+            "name": "Moritz Fiebig"
+          },
+          {
+            "lane": 6,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 7,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 8,
+            "name": "Justin Medeiros"
+          },
+          {
+            "lane": 9,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 10,
+            "name": "James Sprague"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 2,
+            "name": "Quinn Robinson"
+          },
+          {
+            "lane": 3,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 4,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 5,
+            "name": "Ty Jenkins"
+          },
+          {
+            "lane": 6,
+            "name": "Victor Hoffer"
+          },
+          {
+            "lane": 7,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 8,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 9,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 10,
+            "name": "Patrick Vellner"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "order": 12,
+    "codeLabel": "IE15",
+    "codes": [
+      "IE15"
+    ],
+    "name": "Speed Snatch Triple",
+    "kicker": "",
+    "daySection": "Saturday",
+    "dayKey": "2026-07-25",
+    "dayLabel": "Sat · Jul 25",
+    "startTime": "2026-07-25T21:00:00+0000",
+    "endTime": "2026-07-25T22:40:00+0000",
+    "venue": "SAP Center | San Jose, California",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Siria Meha"
+          },
+          {
+            "lane": 2,
+            "name": "Paige Rodgers"
+          },
+          {
+            "lane": 3,
+            "name": "Mirjam von Rohr"
+          },
+          {
+            "lane": 4,
+            "name": "Matilde Garnes"
+          },
+          {
+            "lane": 5,
+            "name": "Lydia Fish"
+          },
+          {
+            "lane": 6,
+            "name": "Lucy Campbell"
+          },
+          {
+            "lane": 7,
+            "name": "Janie Cheverie"
+          },
+          {
+            "lane": 8,
+            "name": "Hannah Black"
+          },
+          {
+            "lane": 9,
+            "name": "Erica Folo"
+          },
+          {
+            "lane": 10,
+            "name": "Ellie Turner"
+          },
+          {
+            "lane": 11,
+            "name": "Elisa Fuliano"
+          },
+          {
+            "lane": 12,
+            "name": "Bergrós Björnsdóttir"
+          },
+          {
+            "lane": 13,
+            "name": "Anikha Greer"
+          },
+          {
+            "lane": 14,
+            "name": "Alexis Raptis"
+          },
+          {
+            "lane": 15,
+            "name": "Aimee Cringle"
+          },
+          {
+            "lane": 16,
+            "name": "Abigail Domit"
+          },
+          {
+            "lane": 17,
+            "name": "Alex Gazan"
+          },
+          {
+            "lane": 18,
+            "name": "Aline Wirz"
+          },
+          {
+            "lane": 19,
+            "name": "Arielle Loewen"
+          },
+          {
+            "lane": 20,
+            "name": "Danielle Brandon"
+          },
+          {
+            "lane": 21,
+            "name": "Ella Wilkinson"
+          },
+          {
+            "lane": 22,
+            "name": "Emma Lawson"
+          },
+          {
+            "lane": 23,
+            "name": "Haley Adams"
+          },
+          {
+            "lane": 24,
+            "name": "Holly Tynan"
+          },
+          {
+            "lane": 25,
+            "name": "Kyra Milligan"
+          },
+          {
+            "lane": 26,
+            "name": "Lucy McGonigle"
+          },
+          {
+            "lane": 27,
+            "name": "Madeline Sturt"
+          },
+          {
+            "lane": 28,
+            "name": "Miley Wade"
+          },
+          {
+            "lane": 29,
+            "name": "Olivia Kerstetter"
+          },
+          {
+            "lane": 30,
+            "name": "Rachel Noel"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Aniol Ekai"
+          },
+          {
+            "lane": 2,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 3,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 4,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 5,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 6,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 7,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 8,
+            "name": "Jeffrey Adler"
+          },
+          {
+            "lane": 9,
+            "name": "Kalyan Souza"
+          },
+          {
+            "lane": 10,
+            "name": "Moritz Fiebig"
+          },
+          {
+            "lane": 11,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 12,
+            "name": "Quinn Robinson"
+          },
+          {
+            "lane": 13,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 14,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 15,
+            "name": "Ty Jenkins"
+          },
+          {
+            "lane": 16,
+            "name": "Victor Hoffer"
+          },
+          {
+            "lane": 17,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 18,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 19,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 20,
+            "name": "Patrick Vellner"
+          },
+          {
+            "lane": 21,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 22,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 23,
+            "name": "Justin Medeiros"
+          },
+          {
+            "lane": 24,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 25,
+            "name": "James Sprague"
+          },
+          {
+            "lane": 26,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 27,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 28,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 29,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 30,
+            "name": "Austin Hatfield"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "order": 13,
+    "codeLabel": "IE16–17",
+    "codes": [
+      "IE16",
+      "IE17"
+    ],
+    "name": "Event 16 & 17",
+    "kicker": "",
+    "daySection": "Saturday",
+    "dayKey": "2026-07-25",
+    "dayLabel": "Sat · Jul 25",
+    "startTime": "2026-07-25T23:40:00+0000",
+    "endTime": "2026-07-26T01:50:00+0000",
+    "venue": "SAP Center | San Jose, California",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Siria Meha"
+          },
+          {
+            "lane": 2,
+            "name": "Paige Rodgers"
+          },
+          {
+            "lane": 3,
+            "name": "Mirjam von Rohr"
+          },
+          {
+            "lane": 4,
+            "name": "Matilde Garnes"
+          },
+          {
+            "lane": 5,
+            "name": "Lydia Fish"
+          },
+          {
+            "lane": 6,
+            "name": "Lucy McGonigle"
+          },
+          {
+            "lane": 7,
+            "name": "Madeline Sturt"
+          },
+          {
+            "lane": 8,
+            "name": "Miley Wade"
+          },
+          {
+            "lane": 9,
+            "name": "Olivia Kerstetter"
+          },
+          {
+            "lane": 10,
+            "name": "Rachel Noel"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Lucy Campbell"
+          },
+          {
+            "lane": 2,
+            "name": "Janie Cheverie"
+          },
+          {
+            "lane": 3,
+            "name": "Hannah Black"
+          },
+          {
+            "lane": 4,
+            "name": "Erica Folo"
+          },
+          {
+            "lane": 5,
+            "name": "Ellie Turner"
+          },
+          {
+            "lane": 6,
+            "name": "Ella Wilkinson"
+          },
+          {
+            "lane": 7,
+            "name": "Emma Lawson"
+          },
+          {
+            "lane": 8,
+            "name": "Haley Adams"
+          },
+          {
+            "lane": 9,
+            "name": "Holly Tynan"
+          },
+          {
+            "lane": 10,
+            "name": "Kyra Milligan"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Elisa Fuliano"
+          },
+          {
+            "lane": 2,
+            "name": "Bergrós Björnsdóttir"
+          },
+          {
+            "lane": 3,
+            "name": "Anikha Greer"
+          },
+          {
+            "lane": 4,
+            "name": "Alexis Raptis"
+          },
+          {
+            "lane": 5,
+            "name": "Aimee Cringle"
+          },
+          {
+            "lane": 6,
+            "name": "Abigail Domit"
+          },
+          {
+            "lane": 7,
+            "name": "Alex Gazan"
+          },
+          {
+            "lane": 8,
+            "name": "Aline Wirz"
+          },
+          {
+            "lane": 9,
+            "name": "Arielle Loewen"
+          },
+          {
+            "lane": 10,
+            "name": "Danielle Brandon"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Aniol Ekai"
+          },
+          {
+            "lane": 2,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 3,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 4,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 5,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 6,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 7,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 8,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 9,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 10,
+            "name": "Austin Hatfield"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 2,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 3,
+            "name": "Jeffrey Adler"
+          },
+          {
+            "lane": 4,
+            "name": "Kalyan Souza"
+          },
+          {
+            "lane": 5,
+            "name": "Moritz Fiebig"
+          },
+          {
+            "lane": 6,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 7,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 8,
+            "name": "Justin Medeiros"
+          },
+          {
+            "lane": 9,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 10,
+            "name": "James Sprague"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 2,
+            "name": "Quinn Robinson"
+          },
+          {
+            "lane": 3,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 4,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 5,
+            "name": "Ty Jenkins"
+          },
+          {
+            "lane": 6,
+            "name": "Victor Hoffer"
+          },
+          {
+            "lane": 7,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 8,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 9,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 10,
+            "name": "Patrick Vellner"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "order": 14,
+    "codeLabel": "IE18",
+    "codes": [
+      "IE18"
+    ],
+    "name": "Machine 7200M",
+    "kicker": "",
+    "daySection": "Sunday",
+    "dayKey": "2026-07-26",
+    "dayLabel": "Sun · Jul 26",
+    "startTime": "2026-07-26T16:00:00+0000",
+    "endTime": "2026-07-26T17:20:00+0000",
+    "venue": "SAP Center | San Jose, California",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Siria Meha"
+          },
+          {
+            "lane": 2,
+            "name": "Paige Rodgers"
+          },
+          {
+            "lane": 3,
+            "name": "Mirjam von Rohr"
+          },
+          {
+            "lane": 4,
+            "name": "Matilde Garnes"
+          },
+          {
+            "lane": 5,
+            "name": "Lydia Fish"
+          },
+          {
+            "lane": 6,
+            "name": "Lucy Campbell"
+          },
+          {
+            "lane": 7,
+            "name": "Janie Cheverie"
+          },
+          {
+            "lane": 8,
+            "name": "Hannah Black"
+          },
+          {
+            "lane": 9,
+            "name": "Erica Folo"
+          },
+          {
+            "lane": 10,
+            "name": "Ellie Turner"
+          },
+          {
+            "lane": 11,
+            "name": "Elisa Fuliano"
+          },
+          {
+            "lane": 12,
+            "name": "Bergrós Björnsdóttir"
+          },
+          {
+            "lane": 13,
+            "name": "Anikha Greer"
+          },
+          {
+            "lane": 14,
+            "name": "Alexis Raptis"
+          },
+          {
+            "lane": 15,
+            "name": "Aimee Cringle"
+          },
+          {
+            "lane": 16,
+            "name": "Abigail Domit"
+          },
+          {
+            "lane": 17,
+            "name": "Alex Gazan"
+          },
+          {
+            "lane": 18,
+            "name": "Aline Wirz"
+          },
+          {
+            "lane": 19,
+            "name": "Arielle Loewen"
+          },
+          {
+            "lane": 20,
+            "name": "Danielle Brandon"
+          },
+          {
+            "lane": 21,
+            "name": "Ella Wilkinson"
+          },
+          {
+            "lane": 22,
+            "name": "Emma Lawson"
+          },
+          {
+            "lane": 23,
+            "name": "Haley Adams"
+          },
+          {
+            "lane": 24,
+            "name": "Holly Tynan"
+          },
+          {
+            "lane": 25,
+            "name": "Kyra Milligan"
+          },
+          {
+            "lane": 26,
+            "name": "Lucy McGonigle"
+          },
+          {
+            "lane": 27,
+            "name": "Madeline Sturt"
+          },
+          {
+            "lane": 28,
+            "name": "Miley Wade"
+          },
+          {
+            "lane": 29,
+            "name": "Olivia Kerstetter"
+          },
+          {
+            "lane": 30,
+            "name": "Rachel Noel"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Aniol Ekai"
+          },
+          {
+            "lane": 2,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 3,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 4,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 5,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 6,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 7,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 8,
+            "name": "Jeffrey Adler"
+          },
+          {
+            "lane": 9,
+            "name": "Kalyan Souza"
+          },
+          {
+            "lane": 10,
+            "name": "Moritz Fiebig"
+          },
+          {
+            "lane": 11,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 12,
+            "name": "Quinn Robinson"
+          },
+          {
+            "lane": 13,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 14,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 15,
+            "name": "Ty Jenkins"
+          },
+          {
+            "lane": 16,
+            "name": "Victor Hoffer"
+          },
+          {
+            "lane": 17,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 18,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 19,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 20,
+            "name": "Patrick Vellner"
+          },
+          {
+            "lane": 21,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 22,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 23,
+            "name": "Justin Medeiros"
+          },
+          {
+            "lane": 24,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 25,
+            "name": "James Sprague"
+          },
+          {
+            "lane": 26,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 27,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 28,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 29,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 30,
+            "name": "Austin Hatfield"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "order": 15,
+    "codeLabel": "IE19",
+    "codes": [
+      "IE19"
+    ],
+    "name": "Roll to Support AMRAP",
+    "kicker": "",
+    "daySection": "Sunday",
+    "dayKey": "2026-07-26",
+    "dayLabel": "Sun · Jul 26",
+    "startTime": "2026-07-26T21:00:00+0000",
+    "endTime": "2026-07-10T22:10:00+0000",
+    "venue": "SAP Center | San Jose, California",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Siria Meha"
+          },
+          {
+            "lane": 2,
+            "name": "Paige Rodgers"
+          },
+          {
+            "lane": 3,
+            "name": "Mirjam von Rohr"
+          },
+          {
+            "lane": 4,
+            "name": "Matilde Garnes"
+          },
+          {
+            "lane": 5,
+            "name": "Lydia Fish"
+          },
+          {
+            "lane": 6,
+            "name": "Lucy McGonigle"
+          },
+          {
+            "lane": 7,
+            "name": "Madeline Sturt"
+          },
+          {
+            "lane": 8,
+            "name": "Miley Wade"
+          },
+          {
+            "lane": 9,
+            "name": "Olivia Kerstetter"
+          },
+          {
+            "lane": 10,
+            "name": "Rachel Noel"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Lucy Campbell"
+          },
+          {
+            "lane": 2,
+            "name": "Janie Cheverie"
+          },
+          {
+            "lane": 3,
+            "name": "Hannah Black"
+          },
+          {
+            "lane": 4,
+            "name": "Erica Folo"
+          },
+          {
+            "lane": 5,
+            "name": "Ellie Turner"
+          },
+          {
+            "lane": 6,
+            "name": "Ella Wilkinson"
+          },
+          {
+            "lane": 7,
+            "name": "Emma Lawson"
+          },
+          {
+            "lane": 8,
+            "name": "Haley Adams"
+          },
+          {
+            "lane": 9,
+            "name": "Holly Tynan"
+          },
+          {
+            "lane": 10,
+            "name": "Kyra Milligan"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Elisa Fuliano"
+          },
+          {
+            "lane": 2,
+            "name": "Bergrós Björnsdóttir"
+          },
+          {
+            "lane": 3,
+            "name": "Anikha Greer"
+          },
+          {
+            "lane": 4,
+            "name": "Alexis Raptis"
+          },
+          {
+            "lane": 5,
+            "name": "Aimee Cringle"
+          },
+          {
+            "lane": 6,
+            "name": "Abigail Domit"
+          },
+          {
+            "lane": 7,
+            "name": "Alex Gazan"
+          },
+          {
+            "lane": 8,
+            "name": "Aline Wirz"
+          },
+          {
+            "lane": 9,
+            "name": "Arielle Loewen"
+          },
+          {
+            "lane": 10,
+            "name": "Danielle Brandon"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Aniol Ekai"
+          },
+          {
+            "lane": 2,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 3,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 4,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 5,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 6,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 7,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 8,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 9,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 10,
+            "name": "Austin Hatfield"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 2,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 3,
+            "name": "Jeffrey Adler"
+          },
+          {
+            "lane": 4,
+            "name": "Kalyan Souza"
+          },
+          {
+            "lane": 5,
+            "name": "Moritz Fiebig"
+          },
+          {
+            "lane": 6,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 7,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 8,
+            "name": "Justin Medeiros"
+          },
+          {
+            "lane": 9,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 10,
+            "name": "James Sprague"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 2,
+            "name": "Quinn Robinson"
+          },
+          {
+            "lane": 3,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 4,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 5,
+            "name": "Ty Jenkins"
+          },
+          {
+            "lane": 6,
+            "name": "Victor Hoffer"
+          },
+          {
+            "lane": 7,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 8,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 9,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 10,
+            "name": "Patrick Vellner"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "order": 16,
+    "codeLabel": "IE20",
+    "codes": [
+      "IE20"
+    ],
+    "name": "Event 20",
+    "kicker": "",
+    "daySection": "Sunday",
+    "dayKey": "2026-07-26",
+    "dayLabel": "Sun · Jul 26",
+    "startTime": "2026-07-26T22:30:00+0000",
+    "endTime": "2026-07-27T00:10:00+0000",
+    "venue": "SAP Center | San Jose, California",
+    "heats": [
+      {
+        "number": 1,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Siria Meha"
+          },
+          {
+            "lane": 2,
+            "name": "Paige Rodgers"
+          },
+          {
+            "lane": 3,
+            "name": "Mirjam von Rohr"
+          },
+          {
+            "lane": 4,
+            "name": "Matilde Garnes"
+          },
+          {
+            "lane": 5,
+            "name": "Lydia Fish"
+          },
+          {
+            "lane": 6,
+            "name": "Lucy McGonigle"
+          },
+          {
+            "lane": 7,
+            "name": "Madeline Sturt"
+          },
+          {
+            "lane": 8,
+            "name": "Miley Wade"
+          },
+          {
+            "lane": 9,
+            "name": "Olivia Kerstetter"
+          },
+          {
+            "lane": 10,
+            "name": "Rachel Noel"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Lucy Campbell"
+          },
+          {
+            "lane": 2,
+            "name": "Janie Cheverie"
+          },
+          {
+            "lane": 3,
+            "name": "Hannah Black"
+          },
+          {
+            "lane": 4,
+            "name": "Erica Folo"
+          },
+          {
+            "lane": 5,
+            "name": "Ellie Turner"
+          },
+          {
+            "lane": 6,
+            "name": "Ella Wilkinson"
+          },
+          {
+            "lane": 7,
+            "name": "Emma Lawson"
+          },
+          {
+            "lane": 8,
+            "name": "Haley Adams"
+          },
+          {
+            "lane": 9,
+            "name": "Holly Tynan"
+          },
+          {
+            "lane": 10,
+            "name": "Kyra Milligan"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "gender": "Women",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Elisa Fuliano"
+          },
+          {
+            "lane": 2,
+            "name": "Bergrós Björnsdóttir"
+          },
+          {
+            "lane": 3,
+            "name": "Anikha Greer"
+          },
+          {
+            "lane": 4,
+            "name": "Alexis Raptis"
+          },
+          {
+            "lane": 5,
+            "name": "Aimee Cringle"
+          },
+          {
+            "lane": 6,
+            "name": "Abigail Domit"
+          },
+          {
+            "lane": 7,
+            "name": "Alex Gazan"
+          },
+          {
+            "lane": 8,
+            "name": "Aline Wirz"
+          },
+          {
+            "lane": 9,
+            "name": "Arielle Loewen"
+          },
+          {
+            "lane": 10,
+            "name": "Danielle Brandon"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Aniol Ekai"
+          },
+          {
+            "lane": 2,
+            "name": "Bayley Martin"
+          },
+          {
+            "lane": 3,
+            "name": "Benjamin Reyes"
+          },
+          {
+            "lane": 4,
+            "name": "Colten Mertens"
+          },
+          {
+            "lane": 5,
+            "name": "Dylan Hamming"
+          },
+          {
+            "lane": 6,
+            "name": "Guilherme Malheiros"
+          },
+          {
+            "lane": 7,
+            "name": "Dallin Pepper"
+          },
+          {
+            "lane": 8,
+            "name": "Calum Clements"
+          },
+          {
+            "lane": 9,
+            "name": "Ben Fowler"
+          },
+          {
+            "lane": 10,
+            "name": "Austin Hatfield"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Henrik Haapalainen"
+          },
+          {
+            "lane": 2,
+            "name": "Jay Crouch"
+          },
+          {
+            "lane": 3,
+            "name": "Jeffrey Adler"
+          },
+          {
+            "lane": 4,
+            "name": "Kalyan Souza"
+          },
+          {
+            "lane": 5,
+            "name": "Moritz Fiebig"
+          },
+          {
+            "lane": 6,
+            "name": "Nick Mathew"
+          },
+          {
+            "lane": 7,
+            "name": "Luis Cuellar"
+          },
+          {
+            "lane": 8,
+            "name": "Justin Medeiros"
+          },
+          {
+            "lane": 9,
+            "name": "Jayson Hopper"
+          },
+          {
+            "lane": 10,
+            "name": "James Sprague"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "gender": "Men",
+        "lanes": [
+          {
+            "lane": 1,
+            "name": "Nika Maisuradze"
+          },
+          {
+            "lane": 2,
+            "name": "Quinn Robinson"
+          },
+          {
+            "lane": 3,
+            "name": "Roman Khrennikov"
+          },
+          {
+            "lane": 4,
+            "name": "Spencer Panchik"
+          },
+          {
+            "lane": 5,
+            "name": "Ty Jenkins"
+          },
+          {
+            "lane": 6,
+            "name": "Victor Hoffer"
+          },
+          {
+            "lane": 7,
+            "name": "Tudor Magda"
+          },
+          {
+            "lane": 8,
+            "name": "Saxon Panchik"
+          },
+          {
+            "lane": 9,
+            "name": "Ricky Garard"
+          },
+          {
+            "lane": 10,
+            "name": "Patrick Vellner"
+          }
+        ]
+      }
+    ]
+  }
+]
