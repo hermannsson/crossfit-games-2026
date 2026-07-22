@@ -93,12 +93,12 @@ export function namedEvents(
 //
 // The leaderboard API numbers events sequentially in competition order (1..N)
 // and keys every per-event score by that ordinal — it has no concept of the IE
-// codes, which live only in the schedule/workouts. The IE codes have a gap
-// (IE7 is absent), so keying columns off the IE number would shift every score
-// after the gap. Instead we take the ordinal straight from the API and join the
-// names positionally: the i-th named event lines up with the API's i-th
-// ordinal. This is correct whether the API numbers contiguously (1..N) or
-// skips to mirror the IE codes — both drop the same slot at the same position.
+// codes, which live only in the schedule/workouts. Rather than assume the IE
+// number equals the API ordinal, we take the ordinal straight from the API and
+// join the names positionally: the i-th named event lines up with the API's
+// i-th ordinal. This stays correct even if the IE codes and the API ordinals
+// ever diverge (a missing code, a renumber) — both are read in competition
+// order and lined up slot for slot.
 //
 // Events the API hasn't published an ordinal for yet (still upcoming) get a
 // provisional ordinal that continues past the API's highest, so it can never

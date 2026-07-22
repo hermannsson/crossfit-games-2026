@@ -170,16 +170,16 @@ async function fetchScheduleCMS(): Promise<Omit<ScheduleEntry, "heats">[]> {
   for (const block of set?.blocks ?? []) {
     const section = (block.headline_text ?? "").trim();
     for (const it of block.items ?? []) {
-      if (it.competition_user_type !== "individual") continue;
       const headline = (it.headline_text ?? "").trim();
-      // Prefer the structured `workout_name` field (e.g. ["event1"], or
-      // ["event3","event4","event5"] for combined lifts) — the CMS drops the
-      // "IEn - " prefix from some named events' headlines but keeps this. Fall
-      // back to parsing IE codes out of the headline when it's absent.
-      const wn: string[] = Array.isArray(it.workout_name) ? it.workout_name : [];
-      const codes = wn.length
-        ? wn.map((w) => `IE${String(w).replace(/\D/g, "")}`).filter((c) => /^IE\d+$/.test(c))
-        : (headline.match(/IE\d+/g) ?? []).map((c: string) => normalizeCode(c));
+      const codes = eventCodes(headline, it.workout_name);
+      // Keep only individual competition events — rows that resolve to an "IE"
+      // (Individual Event) code. This drops non-competition rows (the Opening
+      // Ceremony has no code) and team events, and — importantly — keeps events
+      // the CMS has mis-tagged: IE7 is entered with competition_user_type
+      // "team" and a wrong workout_name, but its "IE7" headline is authoritative
+      // (see eventCodes). Filtering on competition_user_type instead would drop
+      // IE7 and let the Opening Ceremony through.
+      if (codes.length === 0) continue;
       const start = it.start_date ?? null;
       const d = start ? new Date(start) : null;
       out.push({
@@ -187,7 +187,10 @@ async function fetchScheduleCMS(): Promise<Omit<ScheduleEntry, "heats">[]> {
         codeLabel: codeLabel(codes),
         codes,
         name: deriveName(headline, codes),
-        kicker: (it.kicker ?? "").trim(),
+        // The kicker names the divisions contesting the event ("Women, Men").
+        // Every event here is individual, so a "Team" kicker is an artifact of
+        // the same CMS mis-tag that hits IE7 — drop it rather than show it.
+        kicker: dropTeamKicker(it.kicker),
         daySection: section,
         dayKey: d ? isoDay(d) : "",
         dayLabel: d ? dayLabel(d) : section,
@@ -237,6 +240,26 @@ function attachHeats(codes: string[], map: Map<string, Heat[]>): Heat[] {
   }
   const rank: Record<string, number> = { Women: 0, Men: 1, "": 2 };
   return out.sort((a, b) => (rank[a.gender] - rank[b.gender]) || a.number - b.number);
+}
+
+// Resolve an item's IE (Individual Event) codes from the CMS row. The headline
+// is authoritative when it carries explicit codes ("IE7", "IE16 and IE17"): the
+// CMS occasionally stores a wrong `workout_name` (IE7's is ["event2"], which
+// would collide with the real IE2). Only when the headline has no code — named
+// events like "2007 Hopper" — do we fall back to `workout_name`, which the CMS
+// keeps even where it drops the "IEn - " prefix from the headline.
+export function eventCodes(headline: string, workoutName: unknown): string[] {
+  const fromHeadline = (headline.match(/\bIE\d+/gi) ?? []).map(normalizeCode);
+  if (fromHeadline.length) return fromHeadline;
+  const wn: unknown[] = Array.isArray(workoutName) ? workoutName : [];
+  return wn
+    .map((w) => `IE${String(w).replace(/\D/g, "")}`)
+    .filter((c) => /^IE\d+$/.test(c));
+}
+
+function dropTeamKicker(kicker: unknown): string {
+  const k = (typeof kicker === "string" ? kicker : "").trim();
+  return k.toLowerCase() === "team" ? "" : k;
 }
 
 function deriveName(headline: string, codes: string[]): string {

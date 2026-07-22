@@ -4,12 +4,12 @@
     {
       "ordinal": 1,
       "code": "IE1",
-      "name": "The 2007 Hopper"
+      "name": "2007 Hopper"
     },
     {
       "ordinal": 2,
       "code": "IE2",
-      "name": "Ranch 7200"
+      "name": "Ranch 7200m"
     },
     {
       "ordinal": 3,
@@ -29,7 +29,12 @@
     {
       "ordinal": 6,
       "code": "IE6",
-      "name": "Grass Oval Bike Race"
+      "name": "Grass Track Race"
+    },
+    {
+      "ordinal": 7,
+      "code": "IE7",
+      "name": "Event 7"
     },
     {
       "ordinal": 8,
@@ -69,7 +74,7 @@
     {
       "ordinal": 15,
       "code": "IE15",
-      "name": "Speed Snatch Triple"
+      "name": "2020 Speed Snatch Triple"
     },
     {
       "ordinal": 16,
@@ -99,119 +104,7 @@
   ],
   "rows": [
     {
-      "rank": 0,
-      "name": "Danielle Brandon",
-      "firstName": "Danielle",
-      "lastName": "Brandon",
-      "countryCode": "USA",
-      "country": "United States",
-      "region": "North America East",
-      "affiliate": "",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/025a0-P349097_6-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Aline Wirz",
-      "firstName": "Aline",
-      "lastName": "Wirz",
-      "countryCode": "SUI",
-      "country": "Switzerland",
-      "region": "Europe",
-      "affiliate": "BF CrossFit",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/34f6d-P1920303_4-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Ellie Turner",
-      "firstName": "Ellie",
-      "lastName": "Turner",
-      "countryCode": "AUS",
-      "country": "Australia",
-      "region": "North America West",
-      "affiliate": "CrossFit Shred Shed",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/e957b-P1119323_4-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Anikha Greer",
-      "firstName": "Anikha",
-      "lastName": "Greer",
-      "countryCode": "CAN",
-      "country": "Canada",
-      "region": "North America East",
-      "affiliate": "Peak 360 CrossFit",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/9bf9b-P1239579_27-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Abigail Domit",
-      "firstName": "Abigail",
-      "lastName": "Domit",
-      "countryCode": "USA",
-      "country": "United States",
-      "region": "North America West",
-      "affiliate": "Elite CrossFit",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/7fe27-P2077209_9-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Alex Gazan",
-      "firstName": "Alex",
-      "lastName": "Gazan",
-      "countryCode": "USA",
-      "country": "United States",
-      "region": "North America West",
-      "affiliate": "Camp Rhino CrossFit",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/3364b-P1232297_4-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Paige Rodgers",
-      "firstName": "Paige",
-      "lastName": "Rodgers",
-      "countryCode": "USA",
-      "country": "United States",
-      "region": "North America East",
-      "affiliate": "CrossFit Mayhem",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/31908-P1190381_3-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Alexis Raptis",
-      "firstName": "Alexis",
-      "lastName": "Raptis",
-      "countryCode": "USA",
-      "country": "United States",
-      "region": "North America East",
-      "affiliate": "Novi CrossFit",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/0b620-P503582_3-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
+      "rank": 1,
       "name": "Madeline Sturt",
       "firstName": "Madeline",
       "lastName": "Sturt",
@@ -221,25 +114,81 @@
       "affiliate": "",
       "gender": "women",
       "photo": "https://profilepicsbucket.crossfit.com/cd1ef-P21556_13-184.jpg",
-      "totalPoints": 0,
-      "scores": []
+      "totalPoints": 100,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 1,
+          "points": 100,
+          "display": "08:03.48 (03:54) (100p)"
+        }
+      ]
     },
     {
-      "rank": 0,
-      "name": "Olivia Kerstetter",
-      "firstName": "Olivia",
-      "lastName": "Kerstetter",
+      "rank": 6,
+      "name": "Arielle Loewen",
+      "firstName": "Arielle",
+      "lastName": "Loewen",
       "countryCode": "USA",
       "country": "United States",
       "region": "North America West",
-      "affiliate": "Overland Park CrossFit",
+      "affiliate": "",
       "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/83d02-P1269411_6-184.jpg",
-      "totalPoints": 0,
-      "scores": []
+      "photo": "https://profilepicsbucket.crossfit.com/61499-P132258_6-184.jpg",
+      "totalPoints": 80,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 6,
+          "points": 80,
+          "display": "08:31.02 (03:55) (80p)"
+        }
+      ]
     },
     {
-      "rank": 0,
+      "rank": 5,
+      "name": "Danielle Brandon",
+      "firstName": "Danielle",
+      "lastName": "Brandon",
+      "countryCode": "USA",
+      "country": "United States",
+      "region": "North America East",
+      "affiliate": "",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/025a0-P349097_6-184.jpg",
+      "totalPoints": 84,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 5,
+          "points": 84,
+          "display": "08:26 (03:50) (84p)"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "name": "Alexis Raptis",
+      "firstName": "Alexis",
+      "lastName": "Raptis",
+      "countryCode": "USA",
+      "country": "United States",
+      "region": "North America East",
+      "affiliate": "Novi CrossFit",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/0b620-P503582_3-184.jpg",
+      "totalPoints": 45,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 15,
+          "points": 45,
+          "display": "08:57 (03:53) (45p)"
+        }
+      ]
+    },
+    {
+      "rank": 27,
       "name": "Erica Folo",
       "firstName": "Erica",
       "lastName": "Folo",
@@ -249,11 +198,18 @@
       "affiliate": "CrossFit Connection",
       "gender": "women",
       "photo": "https://profilepicsbucket.crossfit.com/f898c-P601487_2-184.jpg",
-      "totalPoints": 0,
-      "scores": []
+      "totalPoints": 9,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 27,
+          "points": 9,
+          "display": "09:37 (03:51) (9p)"
+        }
+      ]
     },
     {
-      "rank": 0,
+      "rank": 4,
       "name": "Haley Adams",
       "firstName": "Haley",
       "lastName": "Adams",
@@ -263,53 +219,18 @@
       "affiliate": "CrossFit Mayhem",
       "gender": "women",
       "photo": "https://profilepicsbucket.crossfit.com/74bc6-P671666_12-184.jpg",
-      "totalPoints": 0,
-      "scores": []
+      "totalPoints": 88,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 4,
+          "points": 88,
+          "display": "08:22 (03:52) (88p)"
+        }
+      ]
     },
     {
-      "rank": 0,
-      "name": "Holly Tynan",
-      "firstName": "Holly",
-      "lastName": "Tynan",
-      "countryCode": "IRL",
-      "country": "Ireland",
-      "region": "Europe",
-      "affiliate": "CrossFit Aberdeen",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/27096-P1015810_5-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Elisa Fuliano",
-      "firstName": "Elisa",
-      "lastName": "Fuliano",
-      "countryCode": "ITA",
-      "country": "Italy",
-      "region": "Europe",
-      "affiliate": "",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/dd92a-P1983424_10-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Aimee Cringle",
-      "firstName": "Aimee",
-      "lastName": "Cringle",
-      "countryCode": "GBR",
-      "country": "United Kingdom",
-      "region": "Europe",
-      "affiliate": "Blueprint CrossFit",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/51e3c-P1314653_5-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
+      "rank": 20,
       "name": "Matilde Garnes",
       "firstName": "Matilde",
       "lastName": "Garnes",
@@ -319,39 +240,18 @@
       "affiliate": "CrossFit Oslo Kriger",
       "gender": "women",
       "photo": "https://profilepicsbucket.crossfit.com/034aa-P831149_5-184.jpg",
-      "totalPoints": 0,
-      "scores": []
+      "totalPoints": 30,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 20,
+          "points": 30,
+          "display": "09:11.37 (03:53) (30p)"
+        }
+      ]
     },
     {
-      "rank": 0,
-      "name": "Ella Wilkinson",
-      "firstName": "Ella",
-      "lastName": "Wilkinson",
-      "countryCode": "GBR",
-      "country": "United Kingdom",
-      "region": "Europe",
-      "affiliate": "CrossFit Wigan",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/630e5-P1034822_3-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Lucy Campbell",
-      "firstName": "Lucy",
-      "lastName": "Campbell",
-      "countryCode": "GBR",
-      "country": "United Kingdom",
-      "region": "Europe",
-      "affiliate": "Cattle Dog CrossFit",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/61fce-P1458106_4-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
+      "rank": 29,
       "name": "Hannah Black",
       "firstName": "Hannah",
       "lastName": "Black",
@@ -361,25 +261,228 @@
       "affiliate": "SoLa CrossFit",
       "gender": "women",
       "photo": "https://profilepicsbucket.crossfit.com/5a54c-P864249_9-184.jpg",
-      "totalPoints": 0,
-      "scores": []
+      "totalPoints": 3,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 29,
+          "points": 3,
+          "display": "09:58.47 (03:46) (3p)"
+        }
+      ]
     },
     {
-      "rank": 0,
-      "name": "Siria Meha",
-      "firstName": "Siria",
-      "lastName": "Meha",
-      "countryCode": "ALB",
-      "country": "Albania",
-      "region": "Europe",
-      "affiliate": "CrossFit Huntsman",
+      "rank": 8,
+      "name": "Kyra Milligan",
+      "firstName": "Kyra",
+      "lastName": "Milligan",
+      "countryCode": "USA",
+      "country": "United States",
+      "region": "North America East",
+      "affiliate": "CrossFit PRVN",
       "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/bd73d-P2184972_17-184.jpg",
-      "totalPoints": 0,
-      "scores": []
+      "photo": "https://profilepicsbucket.crossfit.com/4a098-P873895_12-184.jpg",
+      "totalPoints": 72,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 8,
+          "points": 72,
+          "display": "08:37.77 (03:52) (72p)"
+        }
+      ]
     },
     {
-      "rank": 0,
+      "rank": 25,
+      "name": "Holly Tynan",
+      "firstName": "Holly",
+      "lastName": "Tynan",
+      "countryCode": "IRL",
+      "country": "Ireland",
+      "region": "Europe",
+      "affiliate": "CrossFit Aberdeen",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/27096-P1015810_5-184.jpg",
+      "totalPoints": 15,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 25,
+          "points": 15,
+          "display": "09:27 (03:56) (15p)"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "name": "Ella Wilkinson",
+      "firstName": "Ella",
+      "lastName": "Wilkinson",
+      "countryCode": "GBR",
+      "country": "United Kingdom",
+      "region": "Europe",
+      "affiliate": "CrossFit Wigan",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/630e5-P1034822_3-184.jpg",
+      "totalPoints": 27,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 21,
+          "points": 27,
+          "display": "09:13.10 (03:54) (27p)"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "name": "Ellie Turner",
+      "firstName": "Ellie",
+      "lastName": "Turner",
+      "countryCode": "AUS",
+      "country": "Australia",
+      "region": "North America West",
+      "affiliate": "CrossFit Shred Shed",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/e957b-P1119323_4-184.jpg",
+      "totalPoints": 60,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 11,
+          "points": 60,
+          "display": "08:49 (03:49) (60p)"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "name": "Paige Rodgers",
+      "firstName": "Paige",
+      "lastName": "Rodgers",
+      "countryCode": "USA",
+      "country": "United States",
+      "region": "North America East",
+      "affiliate": "CrossFit Mayhem",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/31908-P1190381_3-184.jpg",
+      "totalPoints": 36,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 18,
+          "points": 36,
+          "display": "09:07.03 (03:47) (36p)"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "name": "Alex Gazan",
+      "firstName": "Alex",
+      "lastName": "Gazan",
+      "countryCode": "USA",
+      "country": "United States",
+      "region": "North America West",
+      "affiliate": "Camp Rhino CrossFit",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/3364b-P1232297_4-184.jpg",
+      "totalPoints": 56,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 12,
+          "points": 56,
+          "display": "08:54.88 (03:51) (56p)"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "name": "Anikha Greer",
+      "firstName": "Anikha",
+      "lastName": "Greer",
+      "countryCode": "CAN",
+      "country": "Canada",
+      "region": "North America East",
+      "affiliate": "Peak 360 CrossFit",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/9bf9b-P1239579_27-184.jpg",
+      "totalPoints": 48,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 14,
+          "points": 48,
+          "display": "08:56 (03:47) (48p)"
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "name": "Olivia Kerstetter",
+      "firstName": "Olivia",
+      "lastName": "Kerstetter",
+      "countryCode": "USA",
+      "country": "United States",
+      "region": "North America West",
+      "affiliate": "Overland Park CrossFit",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/83d02-P1269411_6-184.jpg",
+      "totalPoints": 12,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 26,
+          "points": 12,
+          "display": "09:30.61 (03:49) (12p)"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "name": "Aimee Cringle",
+      "firstName": "Aimee",
+      "lastName": "Cringle",
+      "countryCode": "GBR",
+      "country": "United Kingdom",
+      "region": "Europe",
+      "affiliate": "Blueprint CrossFit",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/51e3c-P1314653_5-184.jpg",
+      "totalPoints": 64,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 10,
+          "points": 64,
+          "display": "08:40.48 (03:47) (64p)"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "name": "Lucy Campbell",
+      "firstName": "Lucy",
+      "lastName": "Campbell",
+      "countryCode": "GBR",
+      "country": "United Kingdom",
+      "region": "Europe",
+      "affiliate": "Cattle Dog CrossFit",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/61fce-P1458106_4-184.jpg",
+      "totalPoints": 96,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 2,
+          "points": 96,
+          "display": "08:10.13 (03:44) (96p)"
+        }
+      ]
+    },
+    {
+      "rank": 30,
       "name": "Rachel Noel",
       "firstName": "Rachel",
       "lastName": "Noel",
@@ -390,122 +493,17 @@
       "gender": "women",
       "photo": "https://profilepicsbucket.crossfit.com/ec21d-P1460972_12-184.jpg",
       "totalPoints": 0,
-      "scores": []
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 30,
+          "points": 0,
+          "display": "10:03.44 (03:50) (0p)"
+        }
+      ]
     },
     {
-      "rank": 0,
-      "name": "Bergrós Björnsdóttir",
-      "firstName": "Bergrós",
-      "lastName": "Björnsdóttir",
-      "countryCode": "ISL",
-      "country": "Iceland",
-      "region": "Europe",
-      "affiliate": "CrossFit Reykjavík",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/75f87-P1836124_10-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Emma Lawson",
-      "firstName": "Emma",
-      "lastName": "Lawson",
-      "countryCode": "CAN",
-      "country": "Canada",
-      "region": "North America East",
-      "affiliate": "",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/945d6-P1931423_8-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Janie Cheverie",
-      "firstName": "Janie",
-      "lastName": "Cheverie",
-      "countryCode": "CAN",
-      "country": "Canada",
-      "region": "North America West",
-      "affiliate": "",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/19e46-P2204010_27-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Lucy McGonigle",
-      "firstName": "Lucy",
-      "lastName": "McGonigle",
-      "countryCode": "IRL",
-      "country": "Ireland",
-      "region": "Europe",
-      "affiliate": "CrossFit Resplendent",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/139ea-P1984229_9-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Mirjam von Rohr",
-      "firstName": "Mirjam",
-      "lastName": "von Rohr",
-      "countryCode": "SUI",
-      "country": "Switzerland",
-      "region": "Europe",
-      "affiliate": "CrossFit Ouf",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/baa04-P2080362_5-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Miley Wade",
-      "firstName": "Miley",
-      "lastName": "Wade",
-      "countryCode": "USA",
-      "country": "United States",
-      "region": "North America East",
-      "affiliate": "CrossFit Mayhem",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/0428b-P2206930_8-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Kyra Milligan",
-      "firstName": "Kyra",
-      "lastName": "Milligan",
-      "countryCode": "USA",
-      "country": "United States",
-      "region": "North America East",
-      "affiliate": "CrossFit PRVN",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/4a098-P873895_12-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
-      "name": "Arielle Loewen",
-      "firstName": "Arielle",
-      "lastName": "Loewen",
-      "countryCode": "USA",
-      "country": "United States",
-      "region": "North America West",
-      "affiliate": "",
-      "gender": "women",
-      "photo": "https://profilepicsbucket.crossfit.com/61499-P132258_6-184.jpg",
-      "totalPoints": 0,
-      "scores": []
-    },
-    {
-      "rank": 0,
+      "rank": 17,
       "name": "Lydia Fish",
       "firstName": "Lydia",
       "lastName": "Fish",
@@ -515,8 +513,225 @@
       "affiliate": "CrossFit Chippewa Falls",
       "gender": "women",
       "photo": "https://profilepicsbucket.crossfit.com/7e495-P1763858_7-184.jpg",
-      "totalPoints": 0,
-      "scores": []
+      "totalPoints": 39,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 17,
+          "points": 39,
+          "display": "09:06 (04:02) (39p)"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "name": "Bergrós Björnsdóttir",
+      "firstName": "Bergrós",
+      "lastName": "Björnsdóttir",
+      "countryCode": "ISL",
+      "country": "Iceland",
+      "region": "Europe",
+      "affiliate": "CrossFit Reykjavík",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/75f87-P1836124_10-184.jpg",
+      "totalPoints": 68,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 9,
+          "points": 68,
+          "display": "08:40 (03:52) (68p)"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "name": "Aline Wirz",
+      "firstName": "Aline",
+      "lastName": "Wirz",
+      "countryCode": "SUI",
+      "country": "Switzerland",
+      "region": "Europe",
+      "affiliate": "BF CrossFit",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/34f6d-P1920303_4-184.jpg",
+      "totalPoints": 92,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 3,
+          "points": 92,
+          "display": "08:16 (03:52) (92p)"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "name": "Emma Lawson",
+      "firstName": "Emma",
+      "lastName": "Lawson",
+      "countryCode": "CAN",
+      "country": "Canada",
+      "region": "North America East",
+      "affiliate": "",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/945d6-P1931423_8-184.jpg",
+      "totalPoints": 76,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 7,
+          "points": 76,
+          "display": "08:35 (03:48) (76p)"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "name": "Elisa Fuliano",
+      "firstName": "Elisa",
+      "lastName": "Fuliano",
+      "countryCode": "ITA",
+      "country": "Italy",
+      "region": "Europe",
+      "affiliate": "",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/dd92a-P1983424_10-184.jpg",
+      "totalPoints": 52,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 13,
+          "points": 52,
+          "display": "08:55.48 (03:57) (52p)"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "name": "Lucy McGonigle",
+      "firstName": "Lucy",
+      "lastName": "McGonigle",
+      "countryCode": "IRL",
+      "country": "Ireland",
+      "region": "Europe",
+      "affiliate": "CrossFit Resplendent",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/139ea-P1984229_9-184.jpg",
+      "totalPoints": 42,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 16,
+          "points": 42,
+          "display": "08:58 (03:58) (42p)"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "name": "Abigail Domit",
+      "firstName": "Abigail",
+      "lastName": "Domit",
+      "countryCode": "USA",
+      "country": "United States",
+      "region": "North America West",
+      "affiliate": "Elite CrossFit",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/7fe27-P2077209_9-184.jpg",
+      "totalPoints": 21,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 23,
+          "points": 21,
+          "display": "09:17 (03:56) (21p)"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "name": "Mirjam von Rohr",
+      "firstName": "Mirjam",
+      "lastName": "von Rohr",
+      "countryCode": "SUI",
+      "country": "Switzerland",
+      "region": "Europe",
+      "affiliate": "CrossFit Ouf",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/baa04-P2080362_5-184.jpg",
+      "totalPoints": 33,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 19,
+          "points": 33,
+          "display": "09:09 (03:48) (33p)"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "name": "Siria Meha",
+      "firstName": "Siria",
+      "lastName": "Meha",
+      "countryCode": "ALB",
+      "country": "Albania",
+      "region": "Europe",
+      "affiliate": "CrossFit Huntsman",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/bd73d-P2184972_17-184.jpg",
+      "totalPoints": 18,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 24,
+          "points": 18,
+          "display": "09:25.07 (03:47) (18p)"
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "name": "Janie Cheverie",
+      "firstName": "Janie",
+      "lastName": "Cheverie",
+      "countryCode": "CAN",
+      "country": "Canada",
+      "region": "North America West",
+      "affiliate": "",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/19e46-P2204010_27-184.jpg",
+      "totalPoints": 6,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 28,
+          "points": 6,
+          "display": "09:53.97 (03:52) (6p)"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "name": "Miley Wade",
+      "firstName": "Miley",
+      "lastName": "Wade",
+      "countryCode": "USA",
+      "country": "United States",
+      "region": "North America East",
+      "affiliate": "CrossFit Mayhem",
+      "gender": "women",
+      "photo": "https://profilepicsbucket.crossfit.com/0428b-P2206930_8-184.jpg",
+      "totalPoints": 24,
+      "scores": [
+        {
+          "ordinal": 1,
+          "place": 22,
+          "points": 24,
+          "display": "09:15.90 (03:47) (24p)"
+        }
+      ]
     }
   ],
   "totalCompetitors": 30
