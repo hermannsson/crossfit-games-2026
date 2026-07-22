@@ -172,7 +172,14 @@ async function fetchScheduleCMS(): Promise<Omit<ScheduleEntry, "heats">[]> {
     for (const it of block.items ?? []) {
       if (it.competition_user_type !== "individual") continue;
       const headline = (it.headline_text ?? "").trim();
-      const codes = (headline.match(/IE\d+/g) ?? []).map((c: string) => normalizeCode(c));
+      // Prefer the structured `workout_name` field (e.g. ["event1"], or
+      // ["event3","event4","event5"] for combined lifts) — the CMS drops the
+      // "IEn - " prefix from some named events' headlines but keeps this. Fall
+      // back to parsing IE codes out of the headline when it's absent.
+      const wn: string[] = Array.isArray(it.workout_name) ? it.workout_name : [];
+      const codes = wn.length
+        ? wn.map((w) => `IE${String(w).replace(/\D/g, "")}`).filter((c) => /^IE\d+$/.test(c))
+        : (headline.match(/IE\d+/g) ?? []).map((c: string) => normalizeCode(c));
       const start = it.start_date ?? null;
       const d = start ? new Date(start) : null;
       out.push({
@@ -233,8 +240,12 @@ function attachHeats(codes: string[], map: Map<string, Heat[]>): Heat[] {
 }
 
 function deriveName(headline: string, codes: string[]): string {
-  const parts = headline.split(/\s+[-–]\s+/);
-  if (parts.length > 1) return parts.slice(1).join(" - ").trim();
+  // Strip a leading code prefix ("IE6 - ", "IE16 and IE17") if the headline
+  // carries one; whatever real text remains is the event name. Named events
+  // may have no prefix at all ("The 2007 Hopper") — use them verbatim. Only
+  // fall back to an "Event N" placeholder when nothing but a code is left.
+  const named = headline.replace(/^\s*IE\d+(?:\s*(?:and|&|,|[-–])\s*IE\d+)*\s*[-–]?\s*/i, "").trim();
+  if (named) return named;
   if (codes.length) return `Event ${codes.map((c) => c.replace("IE", "")).join(" & ")}`;
   return headline;
 }
