@@ -4,20 +4,20 @@
 import type {
   AthleteRow,
   Division,
+  LeaderboardColumn,
   Meta,
   ScheduleEntry,
   EventScore,
   Heat,
 } from "./types";
+import type { CompetitionConfig } from "./competitions";
 
 const HOST = "https://c3po.crossfit.com";
 const PICS = "https://profilepicsbucket.crossfit.com";
 // The finals leaderboard is served under the "finals" container, selecting the
-// Games via final=261. Competition metadata + the real identifier live under
-// the "games/2026" slug (id 261, identifier 4c38…).
-const COMP = "finals/2026";
-const META_SLUG = "games/2026";
-const FINAL_ID = 261;
+// Games via final={id}. Competition metadata + the real identifier live under
+// the "games/{year}" slug. Which season we hit is driven by a CompetitionConfig
+// (see competitions.ts) rather than hardcoded constants.
 
 const DIVISION_ID: Record<Division, number> = { men: 1, women: 2 };
 
@@ -34,9 +34,9 @@ async function getJSON<T>(url: string): Promise<T> {
 
 /* ----------------------------- metadata ----------------------------- */
 
-export async function fetchMeta(): Promise<Meta> {
+export async function fetchMeta(comp: CompetitionConfig): Promise<Meta> {
   const raw = await getJSON<any>(
-    `${HOST}/api/competitions/v1/competitions/${META_SLUG}?expand[]=controls`,
+    `${HOST}/api/competitions/v1/competitions/${comp.metaSlug}?expand[]=controls`,
   );
   const mode: string = raw.leaderboard_mode ?? "unknown";
   return {
@@ -55,20 +55,23 @@ export async function fetchMeta(): Promise<Meta> {
 /* --------------------------- leaderboard ---------------------------- */
 
 export async function fetchLeaderboard(
+  comp: CompetitionConfig,
   division: Division,
-): Promise<{ rows: AthleteRow[]; totalCompetitors: number }> {
+): Promise<{ rows: AthleteRow[]; totalCompetitors: number; columns: LeaderboardColumn[] }> {
   const rows: AthleteRow[] = [];
   let page = 1;
   let totalPages = 1;
   let totalCompetitors = 0;
+  let columns: LeaderboardColumn[] = [];
 
   do {
     const url =
-      `${HOST}/api/leaderboards/v2/competitions/${COMP}/leaderboards` +
-      `?final=${FINAL_ID}&division=${DIVISION_ID[division]}&sort=2&page=${page}`;
+      `${HOST}/api/leaderboards/v2/competitions/${comp.compSlug}/leaderboards` +
+      `?final=${comp.finalId}&division=${DIVISION_ID[division]}&sort=2&page=${page}`;
     const raw = await getJSON<any>(url);
     totalPages = raw?.pagination?.totalPages ?? 1;
     totalCompetitors = raw?.pagination?.totalCompetitors ?? rows.length;
+    if (columns.length === 0) columns = columnsFromOrdinals(raw?.ordinals);
 
     for (const r of raw.leaderboardRows ?? []) {
       rows.push(toAthleteRow(r, division));
@@ -76,7 +79,18 @@ export async function fetchLeaderboard(
     page += 1;
   } while (page <= totalPages);
 
-  return { rows, totalCompetitors };
+  return { rows, totalCompetitors, columns };
+}
+
+// The leaderboard response carries an `ordinals` array describing its event
+// columns. Names there are bare numbers ("1".."10"), so this is the fallback
+// used when the richer workouts source (current-year only) isn't available.
+function columnsFromOrdinals(ordinals: any): LeaderboardColumn[] {
+  if (!Array.isArray(ordinals)) return [];
+  return ordinals.map((o: any, i: number) => {
+    const ordinal = Number(o?.ordinal ?? i + 1);
+    return { ordinal, code: `E${ordinal}`, name: `Event ${ordinal}` };
+  });
 }
 
 function toAthleteRow(r: any, gender: Division): AthleteRow {
@@ -94,9 +108,13 @@ function toAthleteRow(r: any, gender: Division): AthleteRow {
         .map((s: any, i: number): EventScore => {
           const place =
             s.rank != null && `${s.rank}`.trim() !== "" ? Number(s.rank) : null;
+          // Per-event points come back in `score` (a bare number like "92");
+          // `scoreDisplay` holds the human result ("46:45.00"). Older shapes
+          // used a `points` field, so accept that as a fallback.
+          const rawPoints = s.points ?? s.score;
           const points =
-            s.points != null && `${s.points}`.trim() !== ""
-              ? Number(s.points)
+            rawPoints != null && `${rawPoints}`.trim() !== ""
+              ? Number(rawPoints)
               : null;
           return {
             ordinal: Number(s.ordinal ?? i + 1),

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import type {
   AthleteRow,
   Division,
@@ -12,16 +13,36 @@ import type {
 const HERO_IMG =
   "https://assets.crossfit.com/build/img/sites/games/workouts/hero/games.jpg";
 
-export default function Dashboard({ snapshot }: { snapshot: Snapshot }) {
+export default function Dashboard({
+  snapshot,
+  years,
+  activeYear,
+}: {
+  snapshot: Snapshot;
+  years: number[];
+  activeYear: number;
+}) {
   const { meta, leaderboards, schedule, workouts } = snapshot;
   const scored = meta.scored;
 
+  // The current Games publish a CMS schedule + scraped workouts; past seasons
+  // are standings-only, so those sections/tabs are hidden when empty.
+  const hasSchedule = schedule.length > 0;
+  const hasWorkouts = workouts.length > 0;
+  const mode: "seeding" | "live" | "final" = !scored
+    ? "seeding"
+    : /complete|final/i.test(meta.leaderboardMode)
+      ? "final"
+      : "live";
+
+  const router = useRouter();
   const [division, setDivision] = useState<Division>("men");
   const [view, setView] = useState<string>("Overall");
   const [query, setQuery] = useState("");
 
   const lb = leaderboards[division];
   const columns = lb.columns;
+  const activeCol = columns.find((c) => c.code === view) ?? null;
 
   // how many events have been scored (0 while seeding)
   const completed = useMemo(() => {
@@ -35,12 +56,18 @@ export default function Dashboard({ snapshot }: { snapshot: Snapshot }) {
 
   const rows = useMemo(() => {
     const q = query.trim().toLowerCase();
-    // scored: order by overall rank. seeding: keep the roster order from the API.
-    const base = scored
-      ? [...lb.rows].sort((a, b) => (a.rank || 1e9) - (b.rank || 1e9))
-      : [...lb.rows];
+    let base: AthleteRow[];
+    if (activeCol) {
+      // Event view: order by finish in the selected event, unplaced last.
+      base = [...lb.rows].sort((a, b) => placeIn(a, activeCol.ordinal) - placeIn(b, activeCol.ordinal));
+    } else if (scored) {
+      base = [...lb.rows].sort((a, b) => (a.rank || 1e9) - (b.rank || 1e9));
+    } else {
+      // seeding: keep the roster order from the API.
+      base = [...lb.rows];
+    }
     return q ? base.filter((r) => r.name.toLowerCase().includes(q)) : base;
-  }, [lb.rows, query, scored]);
+  }, [lb.rows, query, scored, activeCol]);
 
   const maxPoints = useMemo(
     () => Math.max(1, ...lb.rows.map((r) => r.totalPoints ?? 0)),
@@ -52,10 +79,23 @@ export default function Dashboard({ snapshot }: { snapshot: Snapshot }) {
   const activeDay = days.find((d) => d.key === dayKey) ?? days[0];
 
   const nextEvent = schedule[completed] ?? schedule[schedule.length - 1];
-  const leader = rows[0];
+  const overallLeader = useMemo(
+    () => (scored ? [...lb.rows].sort((a, b) => (a.rank || 1e9) - (b.rank || 1e9)) : lb.rows),
+    [lb.rows, scored],
+  );
+  const leader = overallLeader[0];
+  const runnerUp = overallLeader[1];
   const fieldTotal = leaderboards.men.totalCompetitors + leaderboards.women.totalCompetitors;
   const dayKeys = schedule.map((e) => e.dayKey).filter(Boolean).sort();
-  const dateRange = fmtDateRange(dayKeys[0], dayKeys[dayKeys.length - 1]);
+  // Prefer the accurate per-event day range (current year); fall back to the
+  // competition's meta dates for standings-only past seasons.
+  const dateRange = dayKeys.length
+    ? fmtDateRange(dayKeys[0], dayKeys[dayKeys.length - 1])
+    : fmtDateRange(meta.startDate, meta.endDate);
+
+  function changeYear(y: number) {
+    router.push(y === years[0] ? "/" : `/?year=${y}`);
+  }
 
   return (
     <>
@@ -63,19 +103,31 @@ export default function Dashboard({ snapshot }: { snapshot: Snapshot }) {
       <header className="top">
         <div className="wrap topbar">
           <div className="logo">
-            <span className="mk">CF</span>CrossFit Games <span className="yr">2026</span>
+            <span className="mk">CF</span>CrossFit Games <span className="yr">{meta.year}</span>
           </div>
-          {!scored && <span className="seedtag">Seeding</span>}
+          {mode === "seeding" && <span className="seedtag">Seeding</span>}
+          {mode === "final" && <span className="seedtag done">Final</span>}
+          <label className="yearsel">
+            <select
+              aria-label="Games year"
+              value={activeYear}
+              onChange={(e) => changeYear(Number(e.target.value))}
+            >
+              {years.map((y) => (
+                <option key={y} value={y}>{y} Games</option>
+              ))}
+            </select>
+          </label>
           <nav className="tabs">
             <a href="#leaderboard" className="on">Leaderboard</a>
-            <a href="#schedule">Schedule</a>
-            <a href="#workouts">Workouts</a>
+            {hasSchedule && <a href="#schedule">Schedule</a>}
+            {hasWorkouts && <a href="#workouts">Workouts</a>}
           </nav>
           <div className="top-spacer" />
-          {scored ? (
+          {mode === "live" ? (
             <span className="livepill"><span className="d" />Live</span>
           ) : null}
-          <span className="clock mono">Jul 22–26 · San Jose</span>
+          <span className="clock mono">{dateRange}</span>
         </div>
       </header>
 
@@ -86,10 +138,12 @@ export default function Dashboard({ snapshot }: { snapshot: Snapshot }) {
           <div className="scrim" />
           <div className="hero-inner">
             <span className="kick"><span className="dot" />Fittest on Earth · Individual</span>
-            <h1>2026 CrossFit Games</h1>
+            <h1>{meta.year} CrossFit Games</h1>
             <div className="facts">
               <span className="fact"><span className="mono">{dateRange}</span></span>
-              <span className="fact">The Ranch → SAP Center · <span className="mono">San Jose, CA</span></span>
+              {hasSchedule && (
+                <span className="fact">The Ranch → SAP Center · <span className="mono">San Jose, CA</span></span>
+              )}
               <span className="fact"><span className="mono">{fieldTotal}</span> athletes</span>
             </div>
           </div>
@@ -103,9 +157,9 @@ export default function Dashboard({ snapshot }: { snapshot: Snapshot }) {
           </div>
           <div className="pills" role="group" aria-label="Event view">
             <span className="lbl">View</span>
-            <button className="pill" aria-pressed={view === "Overall"} onClick={() => setView("Overall")}>Overall</button>
+            <button className="pill" aria-pressed={!activeCol} onClick={() => setView("Overall")}>Overall</button>
             {columns.map((c) => (
-              <button key={c.code} className="pill" aria-pressed={view === c.code}
+              <button key={c.code} className="pill" aria-pressed={activeCol?.code === c.code}
                 onClick={() => setView(c.code)} title={c.name}>{c.code}</button>
             ))}
           </div>
@@ -119,7 +173,7 @@ export default function Dashboard({ snapshot }: { snapshot: Snapshot }) {
         {/* ===== KPI STRIP ===== */}
         <div className="kpis">
           <div className="kpi">
-            <div className="k">{scored ? "Current Leader" : "Top Seed"}</div>
+            <div className="k">{mode === "final" ? "Champion" : mode === "live" ? "Current Leader" : "Top Seed"}</div>
             <div className="v">
               {leader ? shortName(leader) : "—"}
               {scored && leader?.totalPoints != null && <span className="sm">{leader.totalPoints}</span>}
@@ -129,21 +183,40 @@ export default function Dashboard({ snapshot }: { snapshot: Snapshot }) {
           <div className="kpi">
             <div className="k">Events</div>
             <div className="v">{completed} <span className="sm">/ {columns.length}</span></div>
-            <div className="s">{scored ? "scored" : "not yet scored"}</div>
+            <div className="s">{mode === "final" ? "all scored" : scored ? "scored" : "not yet scored"}</div>
           </div>
-          <div className="kpi">
-            <div className="k">Next Event</div>
-            <div className="v sm2">{nextEvent?.name ?? "TBA"}</div>
-            <div className="s mono">{nextEvent ? `${nextEvent.dayLabel} · ${fmtClock(nextEvent.startTime)} · ${venueShort(nextEvent.venue)}` : ""}</div>
-          </div>
-          <div className="kpi">
-            <div className="k">Field Cut</div>
-            <div className="v">{lb.totalCompetitors} <span className="sm">→ 20</span></div>
-            <div className="s">later in competition</div>
-          </div>
+          {mode !== "final" && hasSchedule ? (
+            <div className="kpi">
+              <div className="k">Next Event</div>
+              <div className="v sm2">{nextEvent?.name ?? "TBA"}</div>
+              <div className="s mono">{nextEvent ? `${nextEvent.dayLabel} · ${fmtClock(nextEvent.startTime)} · ${venueShort(nextEvent.venue)}` : ""}</div>
+            </div>
+          ) : (
+            <div className="kpi">
+              <div className="k">Runner-up</div>
+              <div className="v">
+                {runnerUp ? shortName(runnerUp) : "—"}
+                {scored && runnerUp?.totalPoints != null && <span className="sm">{runnerUp.totalPoints}</span>}
+              </div>
+              <div className="s">{runnerUp ? `${runnerUp.countryCode} · ${runnerUp.affiliate || "—"}` : ""}</div>
+            </div>
+          )}
+          {mode === "final" ? (
+            <div className="kpi">
+              <div className="k">Field</div>
+              <div className="v">{lb.totalCompetitors} <span className="sm">athletes</span></div>
+              <div className="s">final standings</div>
+            </div>
+          ) : (
+            <div className="kpi">
+              <div className="k">Field Cut</div>
+              <div className="v">{lb.totalCompetitors} <span className="sm">→ 20</span></div>
+              <div className="s">later in competition</div>
+            </div>
+          )}
         </div>
 
-        {!scored && (
+        {mode === "seeding" && (
           <div className="banner">
             <span className="seedtag">Seeding</span>
             Athletes shown in <b>seed order</b> — competition not yet scored.
@@ -152,26 +225,31 @@ export default function Dashboard({ snapshot }: { snapshot: Snapshot }) {
         )}
 
         {/* ===== MAIN GRID ===== */}
-        <div className="grid">
+        <div className={`grid${hasSchedule ? "" : " solo"}`}>
           {/* LEADERBOARD */}
           <div className="card">
             <div className="card-h">
-              <h3>{scored ? "Overall Standings" : "Start List"}</h3>
+              <h3>{activeCol ? `${activeCol.code} · ${activeCol.name}` : scored ? "Overall Standings" : "Start List"}</h3>
               <span className="meta">{division === "men" ? "Men" : "Women"} · {lb.totalCompetitors} athletes</span>
             </div>
             <div className="tscroll">
               <table className="lb">
                 <thead>
                   <tr>
-                    <th className="l" style={{ width: 96 }}>{scored ? "Rank" : "Seed"}</th>
+                    <th className="l" style={{ width: 96 }}>{activeCol ? "Finish" : scored ? "Rank" : "Seed"}</th>
                     <th className="l">Athlete</th>
-                    {columns.map((c) => <th key={c.code} title={c.name}>{c.code}</th>)}
+                    {columns.map((c) => (
+                      <th key={c.code} title={c.name} className={activeCol?.code === c.code ? "sel" : undefined}>{c.code}</th>
+                    ))}
                     <th>{scored ? "Points" : ""}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {rows.map((r, i) => {
-                    const pos = scored && r.rank > 0 ? r.rank : i + 1;
+                    const eventPlace = activeCol ? placeIn(r, activeCol.ordinal) : Infinity;
+                    const pos = activeCol
+                      ? (eventPlace < Infinity ? eventPlace : i + 1)
+                      : scored && r.rank > 0 ? r.rank : i + 1;
                     return (
                     <tr key={r.name + i} className={pos === 1 ? "r1" : ""}>
                       <td className="l">
@@ -188,11 +266,14 @@ export default function Dashboard({ snapshot }: { snapshot: Snapshot }) {
                       </td>
                       {columns.map((c) => {
                         const s = r.scores.find((x) => x.ordinal === c.ordinal);
+                        const sel = activeCol?.code === c.code;
+                        const title = s ? [s.display, s.points != null ? `${s.points} pts` : ""].filter(Boolean).join(" · ") : undefined;
                         return (
-                          <td className="ev" key={c.code}>
+                          <td className={`ev${sel ? " sel" : ""}`} key={c.code} title={title}>
                             {s && s.place != null
                               ? <span className={placeClass(s.place)}>{s.place}</span>
                               : <span className="plc empty">—</span>}
+                            {sel && s && s.display ? <span className="evres mono">{s.display}</span> : null}
                           </td>
                         );
                       })}
@@ -218,6 +299,7 @@ export default function Dashboard({ snapshot }: { snapshot: Snapshot }) {
           </div>
 
           {/* RIGHT RAIL — RUN SHEET */}
+          {hasSchedule && (
           <div className="rail">
             <div className="card">
               <div className="card-h"><h3>Run Sheet</h3><span className="meta">by day</span></div>
@@ -244,9 +326,11 @@ export default function Dashboard({ snapshot }: { snapshot: Snapshot }) {
               </div>
             </div>
           </div>
+          )}
         </div>
 
         {/* ===== SCHEDULE ===== */}
+        {hasSchedule && (
         <section className="blk" id="schedule">
           <div className="blk-h">
             <h2>Schedule</h2>
@@ -265,8 +349,10 @@ export default function Dashboard({ snapshot }: { snapshot: Snapshot }) {
             </table>
           </div>
         </section>
+        )}
 
         {/* ===== WORKOUTS ===== */}
+        {hasWorkouts && (
         <section className="blk" id="workouts">
           <div className="blk-h">
             <h2>Workouts</h2>
@@ -276,6 +362,7 @@ export default function Dashboard({ snapshot }: { snapshot: Snapshot }) {
             {workouts.map((w) => <WorkoutCard key={w.eventId} w={w} />)}
           </div>
         </section>
+        )}
 
         <footer>
           <span className="src">Source · <b>Official CrossFit Games API</b> (c3po.crossfit.com) + workout descriptions</span>
@@ -363,6 +450,13 @@ function groupByDay(schedule: ScheduleEntry[]): DayGroup[] {
 
 function shortName(r: AthleteRow): string {
   return r.lastName || r.name;
+}
+
+// Finishing place in a given event ordinal; Infinity sorts unplaced athletes
+// to the bottom of an event view.
+function placeIn(r: AthleteRow, ordinal: number): number {
+  const s = r.scores.find((x) => x.ordinal === ordinal);
+  return s && s.place != null ? s.place : Infinity;
 }
 
 function Avatar({ row }: { row: AthleteRow }) {

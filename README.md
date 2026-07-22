@@ -56,7 +56,23 @@ cron (`vercel.json`) hits it on a schedule. Notes:
 Before events are scored the API returns a roster, so the site shows **seed
 order** with a clear banner and empty event columns. Once CrossFit posts
 results, the same components render per-event placements, points, and totals —
-re-run `npm run fetch` to pull them in.
+re-run `npm run fetch` to pull them in. The dashboard adapts to three modes
+derived from the API (`seeding` → `live` → `final`): the tag, KPIs (Top Seed /
+Current Leader / Champion + Runner-up), and "Next Event" all change accordingly.
+
+## Seasons (year selector)
+
+`lib/crossfit/competitions.ts` lists the Games seasons the site can show, each
+mapping a year to its c3po ids. A **year dropdown** in the top bar switches
+seasons via `/?year=YYYY` (the newest listed year is the default at `/`).
+
+- The **leaderboard** is available for every listed year, so a completed season
+  (e.g. `?year=2025`) is real, fully-scored data — useful for previewing the
+  scored UI outside competition.
+- The **CMS schedule and scraped workouts only exist for the current Games**, so
+  past seasons render **standings-first**: the Schedule/Workouts tabs and the
+  right rail are hidden, and event columns fall back to the leaderboard's own
+  ordinals. Add a new season by prepending an entry to the registry.
 
 ## Layout
 

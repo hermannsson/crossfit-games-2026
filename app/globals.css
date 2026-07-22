@@ -38,6 +38,11 @@ header.top{position:sticky; top:0; z-index:30; background:color-mix(in srgb,var(
 .logo .mk{width:30px; height:30px; border-radius:8px; background:linear-gradient(150deg,var(--accent),var(--accent-strong)); color:#fff; display:grid; place-items:center; font-weight:800; font-size:13px; box-shadow:0 2px 6px -1px color-mix(in srgb,var(--accent) 55%,transparent)}
 .logo .yr{font-family:var(--mono); color:var(--text-3); font-weight:600}
 .seedtag{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); background:var(--gold-soft); border-radius:6px; padding:4px 9px; font-weight:600}
+.seedtag.done{color:var(--text-2); background:var(--hover)}
+.yearsel{display:inline-flex}
+.yearsel select{font-family:var(--mono); font-size:12px; font-weight:600; color:var(--text); background:var(--panel); border:1px solid var(--border-2); border-radius:8px; padding:6px 10px; cursor:pointer; box-shadow:var(--shadow-sm); transition:border-color .15s}
+.yearsel select:hover{border-color:var(--text-3)}
+.yearsel select:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
 .top-spacer{margin-left:auto}
 .livepill{display:inline-flex; align-items:center; gap:7px; font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); background:var(--accent-soft); border-radius:999px; padding:5px 12px}
 .livepill .d{width:7px;height:7px;border-radius:50%;background:var(--accent); animation:pulse 1.8s infinite}
@@ -93,6 +98,7 @@ nav.tabs a.on{color:var(--text); border-bottom-color:var(--accent)}
 
 /* ================= MAIN GRID ================= */
 .grid{display:grid; grid-template-columns:minmax(0,1fr) 328px; gap:18px; align-items:start}
+.grid.solo{grid-template-columns:1fr}
 @media (max-width:1000px){ .grid{grid-template-columns:1fr} }
 .card{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow-sm); overflow:hidden}
 .card-h{display:flex; align-items:center; justify-content:space-between; padding:16px 18px; border-bottom:1px solid var(--border)}
@@ -120,6 +126,9 @@ tr.r1 .rank .n{color:var(--accent)}
 .ath .cc{font-family:var(--mono); font-size:10.5px; color:var(--text-3); margin-left:8px; font-weight:600; letter-spacing:.04em}
 .aff{font-size:12px; color:var(--text-3); margin-top:1px}
 td.ev{font-family:var(--mono); font-weight:600; color:var(--text-2); width:46px}
+table.lb thead th.sel{color:var(--accent); background:color-mix(in srgb,var(--accent) 8%,var(--panel-2))}
+td.ev.sel{background:color-mix(in srgb,var(--accent) 5%,transparent); width:auto}
+td.ev.sel .evres{display:block; font-size:11px; color:var(--text-3); margin-top:3px; font-weight:500}
 td.ev .plc{display:inline-flex; align-items:center; justify-content:center; min-width:24px; height:24px; padding:0 5px; border-radius:7px; font-size:12.5px}
 .plc.p1{background:var(--accent); color:#fff; box-shadow:0 1px 4px -1px color-mix(in srgb,var(--accent) 60%,transparent)}
 .plc.p2{background:var(--accent-soft); color:var(--accent-strong); font-weight:700}
