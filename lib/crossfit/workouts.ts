@@ -13,7 +13,7 @@ import type { WorkoutBlock } from "./types";
 const URL = "https://games.crossfit.com/workouts/finals";
 
 export async function fetchWorkouts(): Promise<WorkoutBlock[]> {
-  const res = await fetch(URL, { cache: "no-store" });
+  const res = await fetch(URL, { next: { revalidate: 60, tags: ["cf-data"] } });
   if (!res.ok) throw new Error(`${res.status} fetching workouts HTML`);
   const html = await res.text();
   const $ = cheerio.load(html);

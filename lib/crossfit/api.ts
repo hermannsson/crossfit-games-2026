@@ -24,8 +24,9 @@ const DIVISION_ID: Record<Division, number> = { men: 1, women: 2 };
 async function getJSON<T>(url: string): Promise<T> {
   const res = await fetch(url, {
     headers: { accept: "application/json" },
-    // always pull fresh when the fetch script runs
-    cache: "no-store",
+    // Cache for 60s and tag so /api/refresh can bust it on demand. (In the
+    // plain-node fetch script this option is ignored and requests run fresh.)
+    next: { revalidate: 60, tags: ["cf-data"] },
   });
   if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${url}`);
   return (await res.json()) as T;

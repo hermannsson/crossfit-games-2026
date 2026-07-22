@@ -29,9 +29,27 @@ npm run dev       # run the site locally
 npm run build     # production build
 ```
 
-`npm run fetch` writes JSON to `/data`. The site reads those files on each
-request (`force-dynamic`), so re-running `fetch` updates the site with no
-rebuild.
+`npm run fetch` writes a JSON snapshot to `/data`. This snapshot is the
+deploy-time **fallback**: the deployed site fetches live from the CrossFit APIs
+on each render, cached with ISR (see below), and only falls back to `/data` if
+the API is unreachable.
+
+## Live updates
+
+The homepage revalidates every **60 seconds** (`export const revalidate = 60`),
+so it auto-refreshes live data in the background for anyone viewing — no rebuild
+or manual push needed.
+
+`GET /api/refresh` busts the data cache (`revalidateTag`) on demand. A Vercel
+cron (`vercel.json`) hits it on a schedule. Notes:
+
+- Vercel **Hobby** caps cron frequency to **once/day** — so the cron is a daily
+  backstop; ISR does the real minute-to-minute refreshing for visitors.
+- For sub-daily refresh regardless of traffic: on **Pro**, change the cron
+  `schedule` to e.g. `*/5 * * * *`; or point a free external cron
+  (cron-job.org) at `https://<your-app>/api/refresh`.
+- Set a `CRON_SECRET` env var in Vercel to require `Authorization: Bearer` on
+  the endpoint (Vercel's cron sends it automatically).
 
 ## Live vs. seeding
 
