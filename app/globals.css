@@ -150,6 +150,13 @@ td.ev .plc{display:inline-flex; align-items:center; justify-content:center; min-
 td.tot{width:104px; position:sticky; right:0; background:var(--panel); z-index:1; box-shadow:-7px 0 11px -9px rgba(0,0,0,.28)}
 table.lb tbody tr:hover td.tot{background:var(--hover)}
 table.lb thead th.tot{right:0; z-index:2; box-shadow:-7px 0 11px -9px rgba(0,0,0,.28)}
+/* Pin Rank + Athlete columns to the left while scrolling through events */
+table.lb thead th.l:first-child, table.lb tbody td.l:first-child{position:sticky; left:0}
+table.lb thead th.l:nth-child(2), table.lb tbody td.l:nth-child(2){position:sticky; left:96px; box-shadow:7px 0 11px -9px rgba(0,0,0,.28)}
+table.lb tbody td.l{background:var(--panel); z-index:2}
+table.lb thead th.l{z-index:3}
+table.lb tbody tr:hover td.l{background:var(--hover)}
+table.lb tbody tr.r1 td.l{background:color-mix(in srgb,var(--accent) 6%,var(--panel))}
 .totwrap{display:flex; flex-direction:column; align-items:flex-end; gap:5px}
 .totwrap .num{font-family:var(--mono); font-weight:700; font-size:14.5px}
 .totwrap .num.dim{color:var(--text-3); font-weight:600}
