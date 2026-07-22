@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import type { Meta } from "@/lib/crossfit/types";
 import type { Chrome } from "./shared";
+import LiveRefresh from "./LiveRefresh";
 
 // Shared top bar. Nav links route to the three pages (/, /schedule,
 // /workouts); the active tab is derived from the current path. The year
@@ -62,9 +63,7 @@ export default function SiteHeader({
           {hasWorkouts && <Link href={withYear("/workouts")} className={pathname === "/workouts" ? "on" : undefined}>Workouts</Link>}
         </nav>
         <div className="top-spacer" />
-        {mode === "live" ? (
-          <span className="livepill"><span className="d" />Live</span>
-        ) : null}
+        <LiveRefresh mode={mode} generatedAt={meta.generatedAt} />
         <span className="clock mono">{dateRange}</span>
       </div>
     </header>
