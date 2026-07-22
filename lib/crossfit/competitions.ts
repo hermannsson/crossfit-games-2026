@@ -1,8 +1,8 @@
 // The set of Games seasons the site can display. Each maps a year to the
-// identifiers the c3po API keys competitions by. The leaderboard is available
-// for every listed year; the CMS schedule and scraped workout descriptions are
-// only published for the *current* Games, so past years render standings-first
-// (see buildSnapshot). Add a new season by prepending an entry here.
+// identifiers the c3po API keys competitions by. The leaderboard and scraped
+// workout descriptions are available for every listed year; only the CMS
+// schedule (real times/venues/heats) is current-Games-only, so past years
+// render standings-first (see buildSnapshot). Add a season by prepending here.
 
 export interface CompetitionConfig {
   year: number;
@@ -14,7 +14,7 @@ export interface CompetitionConfig {
   metaSlug: string;
   /**
    * The live/upcoming Games. Only the current season has a CMS schedule (real
-   * times/venues) and a scraped workouts page; past seasons are standings-only.
+   * times/venues/heats); past seasons are standings + workout descriptions.
    */
   current: boolean;
 }

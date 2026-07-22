@@ -18,14 +18,14 @@ export async function buildSnapshot(year: number = DEFAULT_YEAR): Promise<Snapsh
   const comp = getCompetition(year);
   const meta = await fetchMeta(comp);
 
-  // Workouts (scraped HTML) and the CMS schedule are only published for the
-  // current Games; past seasons render standings-first from the leaderboard.
+  // Workout descriptions (scraped HTML) are published per-season, so we scrape
+  // them for past Games too (comp.compSlug picks the right year). The CMS
+  // schedule with real times/venues/heats is only published for the current
+  // Games; past seasons render standings-first, named from the workouts feed.
   const [menRaw, womenRaw, workouts, schedule] = await Promise.all([
     fetchLeaderboard(comp, "men"),
     fetchLeaderboard(comp, "women"),
-    comp.current
-      ? fetchWorkouts().catch(() => [] as WorkoutBlock[])
-      : Promise.resolve([] as WorkoutBlock[]),
+    fetchWorkouts(comp.compSlug).catch(() => [] as WorkoutBlock[]),
     comp.current
       ? fetchSchedule(meta.identifier).catch(() => [] as ScheduleEntry[])
       : Promise.resolve([] as ScheduleEntry[]),

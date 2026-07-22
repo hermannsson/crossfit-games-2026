@@ -1,5 +1,7 @@
 // Scraper for the individual workout descriptions, which are server-rendered
-// HTML at games.crossfit.com/workouts/finals (no JSON API exists for these).
+// HTML at games.crossfit.com/workouts/<slug> (no JSON API exists for these).
+// The slug is the competition path segment (e.g. "finals/2025", "finals/2026"),
+// so past seasons' workout pages are scraped the same way as the current one.
 //
 // Structure (verified):
 //   .workouts-calendar > .column
@@ -10,10 +12,10 @@
 import * as cheerio from "cheerio";
 import type { WorkoutBlock } from "./types";
 
-const URL = "https://games.crossfit.com/workouts/finals";
+const BASE = "https://games.crossfit.com/workouts";
 
-export async function fetchWorkouts(): Promise<WorkoutBlock[]> {
-  const res = await fetch(URL, { next: { revalidate: 60, tags: ["cf-data"] } });
+export async function fetchWorkouts(slug: string): Promise<WorkoutBlock[]> {
+  const res = await fetch(`${BASE}/${slug}`, { next: { revalidate: 60, tags: ["cf-data"] } });
   if (!res.ok) throw new Error(`${res.status} fetching workouts HTML`);
   const html = await res.text();
   const $ = cheerio.load(html);
