@@ -43,6 +43,46 @@ export default function LeaderboardView({ snapshot, year }: { snapshot: Snapshot
     return max;
   }, [lb.rows, scored]);
 
+  // Rank movement caused by the most recent scored event: each athlete's
+  // standing from cumulative points through the latest event vs through the one
+  // before it (positive = climbed). Only meaningful in the overall view with at
+  // least two events scored. Keyed by athlete name (unique within a division).
+  const movement = useMemo(() => {
+    const map = new Map<string, number>();
+    if (!scored) return map;
+    const scoredOrds = [
+      ...new Set(
+        lb.rows.flatMap((r) =>
+          r.scores.filter((s) => s.place != null).map((s) => s.ordinal),
+        ),
+      ),
+    ].sort((a, b) => a - b);
+    if (scoredOrds.length < 2) return map;
+    const latest = scoredOrds[scoredOrds.length - 1];
+    const inScored = new Set(scoredOrds);
+
+    const sum = (r: AthleteRow, skipLatest: boolean) =>
+      r.scores.reduce(
+        (t, s) =>
+          s.points != null &&
+          inScored.has(s.ordinal) &&
+          !(skipLatest && s.ordinal === latest)
+            ? t + s.points
+            : t,
+        0,
+      );
+
+    const nowPts = lb.rows.map((r) => sum(r, false));
+    const prevPts = lb.rows.map((r) => sum(r, true));
+    // Standard competition ranking (ties share a rank): 1 + (# strictly above).
+    const rankOf = (pts: number[], v: number) => 1 + pts.filter((p) => p > v).length;
+
+    lb.rows.forEach((r, i) => {
+      map.set(r.name, rankOf(prevPts, prevPts[i]) - rankOf(nowPts, nowPts[i]));
+    });
+    return map;
+  }, [lb.rows, scored]);
+
   const rows = useMemo(() => {
     const q = query.trim().toLowerCase();
     let base: AthleteRow[];
@@ -185,7 +225,12 @@ export default function LeaderboardView({ snapshot, year }: { snapshot: Snapshot
                   return (
                   <tr key={r.name + i} className={pos === 1 ? "r1" : ""}>
                     <td className="l">
-                      <div className="rank"><span className="n">{pos}</span></div>
+                      <div className="rank">
+                        <span className="n">{pos}</span>
+                        {!activeCol && movement.size > 0 ? (
+                          <Delta v={movement.get(r.name) ?? 0} />
+                        ) : null}
+                      </div>
                     </td>
                     <td className="l">
                       <Link className="athlink" href={athleteHref(division, r, year)}>
@@ -234,5 +279,21 @@ export default function LeaderboardView({ snapshot, year }: { snapshot: Snapshot
         </div>
       </div>
     </>
+  );
+}
+
+// Rank-movement chip shown beside the overall rank: ▲/▼ with the number of
+// places gained or lost in the latest event, or a dash when unchanged.
+function Delta({ v }: { v: number }) {
+  if (v === 0) return <span className="delta flat" title="No change">–</span>;
+  const up = v > 0;
+  const n = Math.abs(v);
+  return (
+    <span
+      className={`delta ${up ? "up" : "down"}`}
+      title={`${up ? "Up" : "Down"} ${n} ${n === 1 ? "place" : "places"} in the last event`}
+    >
+      {up ? "▲" : "▼"}{n}
+    </span>
   );
 }

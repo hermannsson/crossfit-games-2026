@@ -122,9 +122,13 @@ table.lb tbody tr{transition:background .12s}
 table.lb tbody tr:hover{background:var(--hover)}
 table.lb tbody tr.r1{background:linear-gradient(90deg, color-mix(in srgb,var(--accent) 6%,transparent), transparent 40%)}
 table.lb tbody tr.r1 td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
-.rank{display:flex; align-items:center; gap:9px; justify-content:flex-start}
+.rank{display:flex; align-items:center; gap:8px; justify-content:flex-start}
 .rank .n{font-family:var(--mono); font-weight:700; font-size:16px; width:24px; text-align:right}
 tr.r1 .rank .n{color:var(--accent)}
+.delta{display:inline-flex; align-items:center; gap:1px; font-family:var(--mono); font-size:10.5px; font-weight:700; letter-spacing:.01em; min-width:26px}
+.delta.up{color:var(--up)}
+.delta.down{color:var(--down)}
+.delta.flat{color:var(--text-3); font-weight:600; justify-content:center}
 .athlete{display:flex; align-items:center; gap:12px}
 .athlete > div{min-width:0}
 .ath, .aff{overflow:hidden; text-overflow:ellipsis}
