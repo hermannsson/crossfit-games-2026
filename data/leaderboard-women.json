@@ -19,27 +19,82 @@
     {
       "ordinal": 4,
       "code": "IE4",
-      "name": "Grass Oval Bicycle Race"
+      "name": "The CrossFit Total"
     },
     {
       "ordinal": 5,
       "code": "IE5",
-      "name": "500 Run"
+      "name": "The CrossFit Total"
     },
     {
       "ordinal": 6,
       "code": "IE6",
-      "name": "Speed Snatch Triple"
-    },
-    {
-      "ordinal": 7,
-      "code": "IE7",
-      "name": "Machine 7200M"
+      "name": "Grass Oval Bike Race"
     },
     {
       "ordinal": 8,
       "code": "IE8",
+      "name": "Event 8"
+    },
+    {
+      "ordinal": 9,
+      "code": "IE9",
+      "name": "Event 9"
+    },
+    {
+      "ordinal": 10,
+      "code": "IE10",
+      "name": "Event 10"
+    },
+    {
+      "ordinal": 11,
+      "code": "IE11",
+      "name": "Event 11"
+    },
+    {
+      "ordinal": 12,
+      "code": "IE12",
+      "name": "Event 12"
+    },
+    {
+      "ordinal": 13,
+      "code": "IE13",
+      "name": "500 Run"
+    },
+    {
+      "ordinal": 14,
+      "code": "IE14",
+      "name": "Event 14"
+    },
+    {
+      "ordinal": 15,
+      "code": "IE15",
+      "name": "Speed Snatch Triple"
+    },
+    {
+      "ordinal": 16,
+      "code": "IE16",
+      "name": "Event 16 & 17"
+    },
+    {
+      "ordinal": 17,
+      "code": "IE17",
+      "name": "Event 16 & 17"
+    },
+    {
+      "ordinal": 18,
+      "code": "IE18",
+      "name": "Machine 7200M"
+    },
+    {
+      "ordinal": 19,
+      "code": "IE19",
       "name": "Roll to Support AMRAP"
+    },
+    {
+      "ordinal": 20,
+      "code": "IE20",
+      "name": "Event 20"
     }
   ],
   "rows": [
