@@ -207,7 +207,7 @@ export default function LeaderboardView({ snapshot, year }: { snapshot: Snapshot
                   {columns.map((c) => (
                     <th key={c.code} title={c.name} className={activeCol?.code === c.code ? "sel" : undefined}>{c.code}</th>
                   ))}
-                  <th style={{ width: 132 }}>{scored ? "Points" : ""}</th>
+                  <th className="tot" style={{ width: 132 }}>{scored ? "Points" : ""}</th>
                 </tr>
               </thead>
               <tbody>

@@ -147,7 +147,9 @@ td.ev .plc{display:inline-flex; align-items:center; justify-content:center; min-
 .plc.p2{background:var(--accent-soft); color:var(--accent-strong); font-weight:700}
 .plc.plow{color:var(--text-3); font-weight:500}
 .plc.empty{color:var(--border-2)}
-td.tot{width:104px}
+td.tot{width:104px; position:sticky; right:0; background:var(--panel); z-index:1; box-shadow:-7px 0 11px -9px rgba(0,0,0,.28)}
+table.lb tbody tr:hover td.tot{background:var(--hover)}
+table.lb thead th.tot{right:0; z-index:2; box-shadow:-7px 0 11px -9px rgba(0,0,0,.28)}
 .totwrap{display:flex; flex-direction:column; align-items:flex-end; gap:5px}
 .totwrap .num{font-family:var(--mono); font-weight:700; font-size:14.5px}
 .totwrap .num.dim{color:var(--text-3); font-weight:600}
