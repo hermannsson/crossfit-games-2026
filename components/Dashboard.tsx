@@ -10,9 +10,6 @@ import type {
   WorkoutBlock,
 } from "@/lib/crossfit/types";
 
-const HERO_IMG =
-  "https://assets.crossfit.com/build/img/sites/games/workouts/hero/games.jpg";
-
 export default function Dashboard({
   snapshot,
   years,
@@ -75,8 +72,6 @@ export default function Dashboard({
   );
 
   const days = useMemo(() => groupByDay(schedule), [schedule]);
-  const [dayKey, setDayKey] = useState<string>(days[0]?.key ?? "");
-  const activeDay = days.find((d) => d.key === dayKey) ?? days[0];
 
   const nextEvent = schedule[completed] ?? schedule[schedule.length - 1];
   const overallLeader = useMemo(
@@ -85,7 +80,6 @@ export default function Dashboard({
   );
   const leader = overallLeader[0];
   const runnerUp = overallLeader[1];
-  const fieldTotal = leaderboards.men.totalCompetitors + leaderboards.women.totalCompetitors;
   const dayKeys = schedule.map((e) => e.dayKey).filter(Boolean).sort();
   // Prefer the accurate per-event day range (current year); fall back to the
   // competition's meta dates for standings-only past seasons.
@@ -103,7 +97,12 @@ export default function Dashboard({
       <header className="top">
         <div className="wrap topbar">
           <div className="logo">
-            <span className="mk">CF</span>CrossFit Games <span className="yr">{meta.year}</span>
+            <span className="mk" role="img" aria-label="Kettlebell">
+              <svg viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="20.5" r="8.2" fill="currentColor" />
+                <path d="M9 15.5C8 5.5 24 5.5 23 15.5" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" />
+              </svg>
+            </span>CrossFit Games <span className="yr">{meta.year}</span>
           </div>
           {mode === "seeding" && <span className="seedtag">Seeding</span>}
           {mode === "final" && <span className="seedtag done">Final</span>}
@@ -132,46 +131,9 @@ export default function Dashboard({
       </header>
 
       <main className="wrap">
-        {/* ===== HERO ===== */}
-        <section className="hero">
-          <div className="bg" style={{ backgroundImage: `url(${HERO_IMG})` }} />
-          <div className="scrim" />
-          <div className="hero-inner">
-            <span className="kick"><span className="dot" />Fittest on Earth · Individual</span>
-            <h1>{meta.year} CrossFit Games</h1>
-            <div className="facts">
-              <span className="fact"><span className="mono">{dateRange}</span></span>
-              {hasSchedule && (
-                <span className="fact">The Ranch → SAP Center · <span className="mono">San Jose, CA</span></span>
-              )}
-              <span className="fact"><span className="mono">{fieldTotal}</span> athletes</span>
-            </div>
-          </div>
-        </section>
-
-        {/* ===== TOOLBAR ===== */}
-        <div className="toolbar" id="leaderboard">
-          <div className="seg" role="group" aria-label="Division">
-            <button aria-pressed={division === "men"} onClick={() => setDivision("men")}>Men</button>
-            <button aria-pressed={division === "women"} onClick={() => setDivision("women")}>Women</button>
-          </div>
-          <div className="pills" role="group" aria-label="Event view">
-            <span className="lbl">View</span>
-            <button className="pill" aria-pressed={!activeCol} onClick={() => setView("Overall")}>Overall</button>
-            {columns.map((c) => (
-              <button key={c.code} className="pill" aria-pressed={activeCol?.code === c.code}
-                onClick={() => setView(c.code)} title={c.name}>{c.code}</button>
-            ))}
-          </div>
-          <label className="search">
-            <span className="mono" aria-hidden>⌕</span>
-            <input placeholder="Search athlete…" aria-label="Search athlete"
-              value={query} onChange={(e) => setQuery(e.target.value)} />
-          </label>
-        </div>
 
         {/* ===== KPI STRIP ===== */}
-        <div className="kpis">
+        <div className="kpis" id="leaderboard">
           <div className="kpi">
             <div className="k">{mode === "final" ? "Champion" : mode === "live" ? "Current Leader" : "Top Seed"}</div>
             <div className="v">
@@ -216,16 +178,30 @@ export default function Dashboard({
           )}
         </div>
 
-        {mode === "seeding" && (
-          <div className="banner">
-            <span className="seedtag">Seeding</span>
-            Athletes shown in <b>seed order</b> — competition not yet scored.
-            Event&nbsp;1 (<b>{schedule[0]?.name}</b>) begins <b>{schedule[0]?.dayLabel}, {fmtClock(schedule[0]?.startTime ?? null)}</b>.
+        {/* ===== TOOLBAR ===== */}
+        <div className="toolbar">
+          <div className="toolbar-top">
+            <div className="seg" role="group" aria-label="Division">
+              <button aria-pressed={division === "men"} onClick={() => setDivision("men")}>Men</button>
+              <button aria-pressed={division === "women"} onClick={() => setDivision("women")}>Women</button>
+            </div>
+            <label className="search">
+              <span className="mono" aria-hidden>⌕</span>
+              <input placeholder="Search athlete…" aria-label="Search athlete"
+                value={query} onChange={(e) => setQuery(e.target.value)} />
+            </label>
           </div>
-        )}
+          <div className="pills" role="group" aria-label="Event view">
+            <button className="pill" aria-pressed={!activeCol} onClick={() => setView("Overall")}>Overall</button>
+            {columns.map((c) => (
+              <button key={c.code} className="pill" aria-pressed={activeCol?.code === c.code}
+                onClick={() => setView(c.code)} title={c.name}>{c.code}</button>
+            ))}
+          </div>
+        </div>
 
         {/* ===== MAIN GRID ===== */}
-        <div className={`grid${hasSchedule ? "" : " solo"}`}>
+        <div className="grid solo">
           {/* LEADERBOARD */}
           <div className="card">
             <div className="card-h">
@@ -298,35 +274,6 @@ export default function Dashboard({
             </div>
           </div>
 
-          {/* RIGHT RAIL — RUN SHEET */}
-          {hasSchedule && (
-          <div className="rail">
-            <div className="card">
-              <div className="card-h"><h3>Run Sheet</h3><span className="meta">by day</span></div>
-              <div className="dayrow" role="group" aria-label="Day">
-                {days.map((d) => (
-                  <button key={d.key} className="dbtn" aria-pressed={d.key === activeDay?.key}
-                    onClick={() => setDayKey(d.key)}>{d.short}</button>
-                ))}
-              </div>
-              <div className="run">
-                {activeDay?.entries.map((e) => (
-                  <div className="runrow" key={e.order}>
-                    <span className="nm">{e.name}<span className="c">{[e.codeLabel, fmtClock(e.startTime)].filter(Boolean).join(" · ")}</span></span>
-                    <span className={`st ${statusOf(e, completed)}`}>{statusLabel(e, completed)}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="card">
-              <div className="card-h"><h3>Venues</h3></div>
-              <div className="run">
-                <div className="runrow"><span className="nm">The Ranch<span className="c">Aromas / Morgan Hill</span></span></div>
-                <div className="runrow"><span className="nm">SAP Center<span className="c">San Jose, California</span></span></div>
-              </div>
-            </div>
-          </div>
-          )}
         </div>
 
         {/* ===== SCHEDULE ===== */}
@@ -334,7 +281,7 @@ export default function Dashboard({
         <section className="blk" id="schedule">
           <div className="blk-h">
             <h2>Schedule</h2>
-            <span className="c mono">{schedule.length} events · venue-local times · expand for heat draws</span>
+            <span className="c mono">{columns.length} events · expand for heat draws</span>
           </div>
           <div className="card sched-scroll">
             <table className="sch">
@@ -486,16 +433,6 @@ function placeClass(place: number): string {
   if (place <= 3) return "plc p2";
   if (place > 10) return "plc plow";
   return "plc";
-}
-
-function statusOf(e: ScheduleEntry, completed: number): string {
-  if (e.order < completed) return "done";
-  if (e.order === completed) return "next";
-  return "soon";
-}
-function statusLabel(e: ScheduleEntry, completed: number): string {
-  const s = statusOf(e, completed);
-  return s === "done" ? "Done" : s === "next" ? "Next" : "Sched";
 }
 
 // Times are stored as wall-clock in +00:00, so format from UTC parts.
