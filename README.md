@@ -77,8 +77,10 @@ seasons via `/?year=YYYY` (the newest listed year is the default at `/`).
 ## Layout
 
 ```
-app/            layout, page (server), globals.css
-components/     Dashboard.tsx (client — toggles, tabs, search)
+app/            layout + one server page per route (/, /schedule, /workouts), globals.css
+components/     SiteHeader (nav), LeaderboardView (client — toggles/search),
+                ScheduleView, WorkoutsView, shared.tsx (helpers, footer, chrome)
+lib/getSnapshot.ts  year resolution + snapshot loading shared by the routes
 lib/crossfit/   api.ts (c3po client), workouts.ts (scraper), types.ts
 lib/data.ts     reads the /data snapshot
 scripts/fetch.ts one-shot data pull

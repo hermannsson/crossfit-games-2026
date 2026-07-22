@@ -1,27 +1,31 @@
+import { redirect } from "next/navigation";
 import SiteHeader from "@/components/SiteHeader";
-import LeaderboardView from "@/components/LeaderboardView";
+import WorkoutsView from "@/components/WorkoutsView";
 import { deriveChrome } from "@/components/shared";
 import { getSnapshot, resolveYear } from "@/lib/getSnapshot";
 import { COMPETITION_YEARS } from "@/lib/crossfit/competitions";
 
-// Rebuild the cached page from live data at most once per minute (ISR). The
-// per-fetch cache (tag "cf-data") aligns with this and can be busted early via
-// /api/refresh. Individual fetches falling back keeps a partial outage graceful.
 export const revalidate = 60;
 
-export default async function Page({
+export default async function WorkoutsPage({
   searchParams,
 }: {
   searchParams: Promise<{ year?: string }>;
 }) {
   const year = resolveYear((await searchParams).year);
   const snapshot = await getSnapshot(year);
+  const chrome = deriveChrome(snapshot);
+
+  // Workout descriptions are only scraped for the current Games.
+  if (!chrome.hasWorkouts) {
+    redirect(year === COMPETITION_YEARS[0] ? "/" : `/?year=${year}`);
+  }
 
   return (
     <>
-      <SiteHeader meta={snapshot.meta} chrome={deriveChrome(snapshot)} years={COMPETITION_YEARS} activeYear={year} />
+      <SiteHeader meta={snapshot.meta} chrome={chrome} years={COMPETITION_YEARS} activeYear={year} />
       <main className="wrap">
-        <LeaderboardView snapshot={snapshot} />
+        <WorkoutsView snapshot={snapshot} />
       </main>
     </>
   );
