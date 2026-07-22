@@ -27,7 +27,11 @@ function WorkoutCard({ w, year }: { w: WorkoutBlock; year: number }) {
           : <span className="code">{w.code}</span>}
         <span className="tag">{w.dayLabel}</span>
       </div>
-      <h4>{w.name}</h4>
+      <h4>
+        {w.code
+          ? <Link className="evlink" href={eventHref(w.code, year)}>{w.name}</Link>
+          : w.name}
+      </h4>
       <div className="lines">
         {w.description.map((line, i) => {
           const cls = /^[♀♂]/.test(line) ? "load" : /(:$|^then,?$)/i.test(line) ? "step" : "";
