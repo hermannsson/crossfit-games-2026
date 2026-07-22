@@ -33,15 +33,17 @@ export default function LeaderboardView({ snapshot, year }: { snapshot: Snapshot
   const columns = lb.columns;
   const activeCol = columns.find((c) => c.code === view) ?? null;
 
-  // how many events have been scored (0 while seeding)
-  const completed = useMemo(() => {
-    if (!scored) return 0;
-    let max = 0;
-    for (const r of lb.rows)
-      for (const s of r.scores)
-        if (s.place != null && s.ordinal > max) max = s.ordinal;
-    return max;
+  // The set of event ordinals that have been scored (empty while seeding). The
+  // API ordinals aren't necessarily contiguous, so we track the actual set
+  // rather than a max — `completed` is its size (used for the "X / N" KPI).
+  const scoredOrdinals = useMemo(() => {
+    const set = new Set<number>();
+    if (scored)
+      for (const r of lb.rows)
+        for (const s of r.scores) if (s.place != null) set.add(s.ordinal);
+    return set;
   }, [lb.rows, scored]);
+  const completed = scoredOrdinals.size;
 
   // Rank movement caused by the most recent scored event: each athlete's
   // standing from cumulative points through the latest event vs through the one
@@ -49,17 +51,10 @@ export default function LeaderboardView({ snapshot, year }: { snapshot: Snapshot
   // least two events scored. Keyed by athlete name (unique within a division).
   const movement = useMemo(() => {
     const map = new Map<string, number>();
-    if (!scored) return map;
-    const scoredOrds = [
-      ...new Set(
-        lb.rows.flatMap((r) =>
-          r.scores.filter((s) => s.place != null).map((s) => s.ordinal),
-        ),
-      ),
-    ].sort((a, b) => a - b);
+    const scoredOrds = [...scoredOrdinals].sort((a, b) => a - b);
     if (scoredOrds.length < 2) return map;
     const latest = scoredOrds[scoredOrds.length - 1];
-    const inScored = new Set(scoredOrds);
+    const inScored = scoredOrdinals;
 
     const sum = (r: AthleteRow, skipLatest: boolean) =>
       r.scores.reduce(
@@ -81,7 +76,7 @@ export default function LeaderboardView({ snapshot, year }: { snapshot: Snapshot
       map.set(r.name, rankOf(prevPts, prevPts[i]) - rankOf(nowPts, nowPts[i]));
     });
     return map;
-  }, [lb.rows, scored]);
+  }, [lb.rows, scoredOrdinals]);
 
   const rows = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -109,7 +104,14 @@ export default function LeaderboardView({ snapshot, year }: { snapshot: Snapshot
   const eventMin = showScores ? 92 : 60;
   const tableMinWidth = 96 + 260 + 132 + columns.length * eventMin;
 
-  const nextEvent = schedule[completed] ?? schedule[schedule.length - 1];
+  // The next event to be contested: the first column (in competition order) not
+  // yet scored, mapped back to its schedule row for day/time/venue. Resolving
+  // via the event code — not a positional index — keeps it correct across
+  // combined rows (IE3–5) and gaps (IE7), which don't line up 1:1 with columns.
+  const nextCol = columns.find((c) => !scoredOrdinals.has(c.ordinal));
+  const nextEvent =
+    (nextCol && schedule.find((e) => e.codes.includes(nextCol.code))) ??
+    schedule[schedule.length - 1];
   const overallLeader = useMemo(
     () => (scored ? [...lb.rows].sort((a, b) => (a.rank || 1e9) - (b.rank || 1e9)) : lb.rows),
     [lb.rows, scored],
