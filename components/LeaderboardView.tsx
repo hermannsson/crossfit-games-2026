@@ -22,6 +22,9 @@ export default function LeaderboardView({ snapshot }: { snapshot: Snapshot }) {
   const [division, setDivision] = useState<Division>("men");
   const [view, setView] = useState<string>("Overall");
   const [query, setQuery] = useState("");
+  // When on, every event column shows its score (time/reps), not just the
+  // selected one.
+  const [showScores, setShowScores] = useState(false);
 
   const lb = leaderboards[division];
   const columns = lb.columns;
@@ -56,6 +59,12 @@ export default function LeaderboardView({ snapshot }: { snapshot: Snapshot }) {
     () => Math.max(1, ...lb.rows.map((r) => r.totalPoints ?? 0)),
     [lb.rows],
   );
+
+  // Fixed table layout: rank/athlete/points get set widths, the event columns
+  // split the rest evenly. The table's min-width scales with the event count
+  // (and grows when scores are shown) so many events scroll instead of cramming.
+  const eventMin = showScores ? 92 : 60;
+  const tableMinWidth = 96 + 260 + 132 + columns.length * eventMin;
 
   const nextEvent = schedule[completed] ?? schedule[schedule.length - 1];
   const overallLeader = useMemo(
@@ -132,6 +141,11 @@ export default function LeaderboardView({ snapshot }: { snapshot: Snapshot }) {
             <button key={c.code} className="pill" aria-pressed={activeCol?.code === c.code}
               onClick={() => setView(c.code)} title={c.name}>{c.code}</button>
           ))}
+          <button className="pill tgl" aria-pressed={showScores}
+            onClick={() => setShowScores((v) => !v)}
+            title="Show every event's score in each column">
+            <span className="mono" aria-hidden>{showScores ? "✓" : "+"}</span> All scores
+          </button>
         </div>
       </div>
 
@@ -144,15 +158,15 @@ export default function LeaderboardView({ snapshot }: { snapshot: Snapshot }) {
             <span className="meta">{division === "men" ? "Men" : "Women"} · {lb.totalCompetitors} athletes</span>
           </div>
           <div className="tscroll">
-            <table className="lb">
+            <table className="lb" style={{ minWidth: tableMinWidth }}>
               <thead>
                 <tr>
                   <th className="l" style={{ width: 96 }}>{activeCol ? "Finish" : scored ? "Rank" : "Seed"}</th>
-                  <th className="l">Athlete</th>
+                  <th className="l" style={{ width: 260 }}>Athlete</th>
                   {columns.map((c) => (
                     <th key={c.code} title={c.name} className={activeCol?.code === c.code ? "sel" : undefined}>{c.code}</th>
                   ))}
-                  <th>{scored ? "Points" : ""}</th>
+                  <th style={{ width: 132 }}>{scored ? "Points" : ""}</th>
                 </tr>
               </thead>
               <tbody>
@@ -178,13 +192,14 @@ export default function LeaderboardView({ snapshot }: { snapshot: Snapshot }) {
                     {columns.map((c) => {
                       const s = r.scores.find((x) => x.ordinal === c.ordinal);
                       const sel = activeCol?.code === c.code;
+                      const showRes = (sel || showScores) && s && s.display;
                       const title = s ? [s.display, s.points != null ? `${s.points} pts` : ""].filter(Boolean).join(" · ") : undefined;
                       return (
-                        <td className={`ev${sel ? " sel" : ""}`} key={c.code} title={title}>
+                        <td className={`ev${sel ? " sel" : ""}${showScores && !sel ? " showres" : ""}`} key={c.code} title={title}>
                           {s && s.place != null
                             ? <span className={placeClass(s.place)}>{s.place}</span>
                             : <span className="plc empty">—</span>}
-                          {sel && s && s.display ? <span className="evres mono">{s.display}</span> : null}
+                          {showRes ? <span className="evres mono">{s.display}</span> : null}
                         </td>
                       );
                     })}
