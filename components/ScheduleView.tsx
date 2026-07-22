@@ -37,7 +37,9 @@ function EventRow({ e, year }: { e: ScheduleEntry; year: number }) {
   return (
     <tr>
       <td className="tm">{fmtRange(e.startTime, e.endTime)}</td>
-      <td className="code">{e.codeLabel}</td>
+      <td className="code">
+        {code ? <Link className="evlink" href={eventHref(code, year)}>{e.codeLabel}</Link> : e.codeLabel}
+      </td>
       <td>
         <div className="nm">
           {code ? <Link className="evlink" href={eventHref(code, year)}>{e.name}</Link> : e.name}
