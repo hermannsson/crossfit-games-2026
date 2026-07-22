@@ -2,8 +2,8 @@
 // Schedule, and Workouts pages. Split out of the former single-page Dashboard
 // so each route can render the same chrome and formatting.
 
-import type { AthleteRow, Division, ScheduleEntry, Snapshot } from "@/lib/crossfit/types";
-import { COMPETITION_YEARS } from "@/lib/crossfit/competitions";
+import type { AthleteRow, Division, Leaderboard, ScheduleEntry, Snapshot } from "@/lib/crossfit/types";
+import { COMPETITION_YEARS, getCompetition } from "@/lib/crossfit/competitions";
 
 export type Mode = "seeding" | "live" | "final";
 
@@ -11,13 +11,22 @@ export interface Chrome {
   mode: Mode;
   hasSchedule: boolean;
   hasWorkouts: boolean;
+  /** true once ≥2 events are scored, so a standings progression is meaningful */
+  hasProgression: boolean;
   dateRange: string;
+}
+
+// Distinct event ordinals with a posted finish in a leaderboard.
+function scoredEventCount(lb: Leaderboard): number {
+  const set = new Set<number>();
+  for (const r of lb.rows) for (const s of r.scores) if (s.place != null) set.add(s.ordinal);
+  return set.size;
 }
 
 // Derive the values the top bar and KPI strip need from a snapshot. Kept pure
 // so it can run in the server components that back each route.
 export function deriveChrome(snapshot: Snapshot): Chrome {
-  const { meta, schedule, workouts } = snapshot;
+  const { meta, schedule, workouts, leaderboards } = snapshot;
   const mode: Mode = !meta.scored
     ? "seeding"
     : /complete|final/i.test(meta.leaderboardMode)
@@ -31,10 +40,21 @@ export function deriveChrome(snapshot: Snapshot): Chrome {
     ? fmtDateRange(dayKeys[0], dayKeys[dayKeys.length - 1])
     : fmtDateRange(meta.startDate, meta.endDate);
 
+  const scoredEvents = Math.max(
+    scoredEventCount(leaderboards.men),
+    scoredEventCount(leaderboards.women),
+  );
+
+  // Show the progression tab once ≥2 events give the lines something to trace.
+  // The live Games get it from the start (it renders a waiting state until the
+  // first results land) so it's ready the moment scoring begins.
+  const isCurrentGames = getCompetition(meta.year).current;
+
   return {
     mode,
     hasSchedule: schedule.length > 0,
     hasWorkouts: workouts.length > 0,
+    hasProgression: scoredEvents >= 2 || isCurrentGames,
     dateRange,
   };
 }

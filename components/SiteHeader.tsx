@@ -20,7 +20,7 @@ export default function SiteHeader({
   years: number[];
   activeYear: number;
 }) {
-  const { mode, hasSchedule, hasWorkouts, dateRange } = chrome;
+  const { mode, hasSchedule, hasWorkouts, hasProgression, dateRange } = chrome;
   const router = useRouter();
   const pathname = usePathname();
 
@@ -59,6 +59,7 @@ export default function SiteHeader({
         </label>
         <nav className="tabs">
           <Link href={withYear("/")} className={pathname === "/" ? "on" : undefined}>Leaderboard</Link>
+          {hasProgression && <Link href={withYear("/progression")} className={pathname === "/progression" ? "on" : undefined}>Progression</Link>}
           {hasSchedule && <Link href={withYear("/schedule")} className={pathname === "/schedule" ? "on" : undefined}>Schedule</Link>}
           {hasWorkouts && <Link href={withYear("/workouts")} className={pathname === "/workouts" ? "on" : undefined}>Workouts</Link>}
         </nav>

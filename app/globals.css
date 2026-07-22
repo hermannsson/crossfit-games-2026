@@ -155,6 +155,17 @@ td.tot{width:104px}
 .bar i{display:block; height:100%; background:linear-gradient(90deg,var(--accent-strong),var(--accent)); border-radius:3px}
 .morerow td{height:44px; text-align:center; font-family:var(--mono); font-size:12px; color:var(--text-3)}
 
+/* ================= PROGRESSION (bump chart) ================= */
+.bumpwrap{padding:16px 8px 20px}
+.bumpwrap svg{display:block}
+.bump-code{fill:var(--text-3); font-size:11px; font-weight:700; letter-spacing:.06em; cursor:pointer; transition:fill .15s}
+.bump-code:hover{fill:var(--accent)}
+.bump-name{font-size:13px; letter-spacing:-.01em}
+.bump-empty{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; text-align:center; padding:64px 24px}
+.bump-empty svg{margin-bottom:6px}
+.bump-empty p{margin:0; font-size:15px; font-weight:700; letter-spacing:-.01em; color:var(--text)}
+.bump-empty .sub{font-size:13px; color:var(--text-3); max-width:340px}
+
 /* right rail */
 .rail{display:flex; flex-direction:column; gap:18px}
 .dayrow{display:flex; gap:6px; padding:14px 16px; border-bottom:1px solid var(--border); flex-wrap:wrap}
